@@ -5,11 +5,11 @@
                 <h3>考生信息</h3>
                 <div class="testi-info">
                     <div class="testi-left">
-                        <img src="Home/images/img18.jpg" alt=""/>
+                        <img src="Home/images/3.jpg" alt=""/>
                     </div>
                     <div class="testi-right">
                         <p><span>"</span> 风一样的女子 <span>"</span></p>
-                        <a href="#">{{$info['username']}}</a>
+                        <a href="#">{{$info['stu_name']}}</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
