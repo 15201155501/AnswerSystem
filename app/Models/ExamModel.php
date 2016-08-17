@@ -126,8 +126,8 @@ class ExamModel extends Model
         /**
          * 设置每个题型的分数
          * 测试数据为单选2.5
-         * 多选是3分
-         * 判断是2分
+         * 多选是2.5分
+         * 判断是2.5分
          */
 
         //每道题的详细信息
@@ -151,7 +151,11 @@ class ExamModel extends Model
         $arrFile = json_decode($jsonFile, true);
 
         //判断每道答题是否正确
+        // print_r($arrCommit);die;
+        // if (is_array($arrCommit)){
+            // print_r($arrCommit);die;
         ksort($arrCommit);
+        // }
         foreach ($arrFile as $keyFile => $valFile) {
             foreach ($arrCommit as $keyCommit => $valCommit) {
                 if ($valFile['qid'] == $keyCommit) {
@@ -230,6 +234,14 @@ class ExamModel extends Model
         );
 
         $res = DB::table('history')->insert($data);
+
+        //将考试状态改变
+        if ($res){
+            $ar['stu_id'] = Session::get('u_id');
+            $ar['em_id'] = Session::get('em_id');
+
+            DB::table('students_exam')->insert($ar);
+        }
 
         return $point;
     }
