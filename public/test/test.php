@@ -86,8 +86,8 @@
 		data = $('#myForm').serialize();
 		//alert(data);
 		$.get('checkExam',data,function(msg){
-			console.log(msg)
-			// alert('你的考试成绩为：'+msg);
+			// console.log(msg)
+			alert('你的考试成绩为：'+msg);
 		});
 	}
 </script>

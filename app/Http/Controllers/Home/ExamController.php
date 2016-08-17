@@ -36,6 +36,7 @@ class ExamController extends Controller
         $model = new ExamModel();
         $info = $model -> getExamInfo($id);
         // dd($info);die;
+        Session::put('em_id', $info['em_id']);
         Session::put('em_name', $info['em_name']);
         //处理时间戳
         $nowtime = time();
@@ -46,7 +47,7 @@ class ExamController extends Controller
         if ($nowtime<$start_time){
             echo "<script>alert('考试还未开始');location.href='examList';</script>";
             exit();
-        }elseif ($nowtime>$end_time){
+        }elseif ($nowtime>$end_time || DB::table('students_exam')->where('stu_id',Session::get('u_id'))->where('em_id',$info['em_id'])->first()){
             echo "<script>alert('你已经考过试了');location.href='examList';</script>";
             exit();
         }
