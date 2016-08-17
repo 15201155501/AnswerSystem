@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>考试系统</title>
+	<meta charset=utf-8>
+</head>
+<body>
+<center><h1>开始考试</h1></center>
+<form id="myForm">
+<ol>
+<p>一、单元题（50分）</p>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="dan76" value="A">&nbsp;&nbsp;A吃啦</li>
+					<li><input type="radio" name="dan76" value="B">&nbsp;&nbsp;B没吃</li>
+					<li><input type="radio" name="dan76" value="C">&nbsp;&nbsp;C不想吃</li>
+					<li><input type="radio" name="dan76" value="D">&nbsp;&nbsp;D给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="dan103" value="A">&nbsp;&nbsp;A吃啦</li>
+					<li><input type="radio" name="dan103" value="B">&nbsp;&nbsp;B没吃</li>
+					<li><input type="radio" name="dan103" value="C">&nbsp;&nbsp;C不想吃</li>
+					<li><input type="radio" name="dan103" value="D">&nbsp;&nbsp;D给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="dan124" value="A">&nbsp;&nbsp;A吃啦</li>
+					<li><input type="radio" name="dan124" value="B">&nbsp;&nbsp;B没吃</li>
+					<li><input type="radio" name="dan124" value="C">&nbsp;&nbsp;C不想吃</li>
+					<li><input type="radio" name="dan124" value="D">&nbsp;&nbsp;D给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="dan148" value="A">&nbsp;&nbsp;A吃啦</li>
+					<li><input type="radio" name="dan148" value="B">&nbsp;&nbsp;B没吃</li>
+					<li><input type="radio" name="dan148" value="C">&nbsp;&nbsp;C不想吃</li>
+					<li><input type="radio" name="dan148" value="D">&nbsp;&nbsp;D给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="dan175" value="A">&nbsp;&nbsp;A吃啦</li>
+					<li><input type="radio" name="dan175" value="B">&nbsp;&nbsp;B没吃</li>
+					<li><input type="radio" name="dan175" value="C">&nbsp;&nbsp;C不想吃</li>
+					<li><input type="radio" name="dan175" value="D">&nbsp;&nbsp;D给你吃吧</li>
+			</ol>
+	</li>
+	<p>二、多选题（50分）</p>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="checkbox" name="44" value="A">A&nbsp;&nbsp;吃啦</li>
+					<li><input type="checkbox" name="44" value="B">B&nbsp;&nbsp;没吃</li>
+					<li><input type="checkbox" name="44" value="C">C&nbsp;&nbsp;不想吃</li>
+					<li><input type="checkbox" name="44" value="D">D&nbsp;&nbsp;给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="checkbox" name="47" value="A">A&nbsp;&nbsp;吃啦</li>
+					<li><input type="checkbox" name="47" value="B">B&nbsp;&nbsp;没吃</li>
+					<li><input type="checkbox" name="47" value="C">C&nbsp;&nbsp;不想吃</li>
+					<li><input type="checkbox" name="47" value="D">D&nbsp;&nbsp;给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="checkbox" name="77" value="A">A&nbsp;&nbsp;吃啦</li>
+					<li><input type="checkbox" name="77" value="B">B&nbsp;&nbsp;没吃</li>
+					<li><input type="checkbox" name="77" value="C">C&nbsp;&nbsp;不想吃</li>
+					<li><input type="checkbox" name="77" value="D">D&nbsp;&nbsp;给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="checkbox" name="116" value="A">A&nbsp;&nbsp;吃啦</li>
+					<li><input type="checkbox" name="116" value="B">B&nbsp;&nbsp;没吃</li>
+					<li><input type="checkbox" name="116" value="C">C&nbsp;&nbsp;不想吃</li>
+					<li><input type="checkbox" name="116" value="D">D&nbsp;&nbsp;给你吃吧</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="checkbox" name="143" value="A">A&nbsp;&nbsp;吃啦</li>
+					<li><input type="checkbox" name="143" value="B">B&nbsp;&nbsp;没吃</li>
+					<li><input type="checkbox" name="143" value="C">C&nbsp;&nbsp;不想吃</li>
+					<li><input type="checkbox" name="143" value="D">D&nbsp;&nbsp;给你吃吧</li>
+			</ol>
+	</li>
+	<p>三、判断题（15分）</p>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="pan18" value="1">&nbsp;&nbsp;吃啦<br><input type="radio" name="pan18" value="0">&nbsp;&nbsp;吃啦</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="pan42" value="1">&nbsp;&nbsp;吃啦<br><input type="radio" name="pan42" value="0">&nbsp;&nbsp;吃啦</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="pan81" value="1">&nbsp;&nbsp;吃啦<br><input type="radio" name="pan81" value="0">&nbsp;&nbsp;吃啦</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="pan93" value="1">&nbsp;&nbsp;吃啦<br><input type="radio" name="pan93" value="0">&nbsp;&nbsp;吃啦</li>
+			</ol>
+	</li>
+	
+	 <li>（）</br>
+	<ol style="list-style:none;">
+					<li><input type="radio" name="pan168" value="1">&nbsp;&nbsp;吃啦<br><input type="radio" name="pan168" value="0">&nbsp;&nbsp;吃啦</li>
+			</ol>
+	</li>
+	</ol>
+</form>
+2016-08-08 02:34:44<center><button><font  style="font-size:30px;">提交试卷</font></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button><font  style="font-size:30px;">检测登陆</font></button></center>
+</body>
+<script src="jquery.js"></script>
+</html>

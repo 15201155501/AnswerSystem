@@ -1,0 +1,2 @@
+<?php die('forbidden'); ?>
+{"appid":"101345592","appkey":"ee243963ba3f3c6afd585a6694d56587","callback":"http://jiangnan2.applinzi.com/callback.php","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}
