@@ -18,8 +18,13 @@ class MyController extends Controller
         //获取登陆用户id
         $u_id = Session::get('u_id');
 
-        //通过id查询个人信息
-        $data['info'] = DB::table('users')->where('u_id',$u_id)->first();
+        if (is_numeric($u_id)){
+            //通过id查询个人信息
+            $data['info'] = DB::table('students')->where('stu_id',$u_id)->first();
+        }else{
+            $data['info'] = DB::table('students')->where('open_id',$u_id)->first();
+        }
+
 
         return view('home.info',$data);
 
