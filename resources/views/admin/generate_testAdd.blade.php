@@ -129,12 +129,9 @@
                 <select class=""  id="zhuan" disabled >
                     <option value="-1">--请选择--</option>
                 </select>专业
-                <select class="" id="jie" disabled>
+                <select class="" name="lid" id="jie" disabled>
                     <option value="-1">--请选择--</option>
                 </select>阶段
-                <select class="" name="lid" id="ban" disabled>
-                    <option value="-1">--请选择--</option>
-                </select>班级
               </td>
             </tr>
             <tr>
@@ -325,7 +322,7 @@
 <script src="jquery.js"></script>
 <script type="text/javascript">
 $(function(){
-        $("#xue,#zhuan,#jie").change(function(){
+        $("#xue,#zhuan").change(function(){
             var id = $(this).attr('id');
             //alert(id);
             var pid = $(this).val();
@@ -338,12 +335,8 @@ $(function(){
                 if(id == 'xue'){
                     $("#zhuan").html(html).removeAttr('disabled');
                     $("#jie").attr('disabled','disabled').html(html);
-                    $("#ban").attr('disabled','disabled').html(html);
-                }else if(id == 'zhuan'){
-                    $("#jie").html(html).removeAttr('disabled');
-                    $("#ban").attr('disabled','disabled').html(html);
                 }else{
-                    $("#ban").html(html).removeAttr('disabled');
+                    $("#jie").html(html).removeAttr('disabled');
                 }
             });
         });
