@@ -93,7 +93,7 @@
     </div>
      <div class="page-content"> 
       <div class="page-header"> 
-       <h1> 邮箱设置<small> <i class="icon-double-angle-right"></i></small> </h1> 
+       <h1> 学生列表<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
 
