@@ -64,7 +64,7 @@
 
                     
 <div class="header">
-  <h1 class="page-title">每日必考</h1>
+  <h1 class="page-title">历史试卷</h1>
   <div class="btn-group">
   </div>
 </div>
