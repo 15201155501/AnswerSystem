@@ -14,27 +14,35 @@ class HistoryController extends Controller
 {
 	public function lists()
 	{
-		$history = new History;
-		$student = new Student;
-		$label = new Label;
-		$lib = new Lib;
-		$arrFCla = DB::table('class')->get();
-		$arrFLibRecursions = $lib->recursions($arrFCla);
-		$arr = array();
-		foreach ($arrFLibRecursions as $keyFLibRecursion => $valFLibRecursion) {
-			$arr[] = $arrFLibRecursions[$keyFLibRecursion];
+		if (Request::input('act') == 'mark') {
+			$arr = array();
+			// print_r(Request::input('his_id'));die;
+			$arr = DB::table('history')->select('history_url')->where('his_id', Request::input('his_id'))->first();
+			return file_get_contents($arr['history_url']);
 		}
-		$dataHisShow = $history->show();
-		foreach ($dataHisShow['data'] as $keyHisShow => $valHisShow) {
-			$dataHisShow['data'][$keyHisShow]['addtime'] = date('Y-m-d H:i:s', $valHisShow['addtime']);
-			$dataStuShow = $student->show($valHisShow['u_id']);
-			$dataHisShow['data'][$keyHisShow]['stu_name'] = $dataStuShow['stu_name'];
-		}
+		else {
+			$history = new History;
+			$student = new Student;
+			$label = new Label;
+			$lib = new Lib;
+			$arrFCla = DB::table('class')->get();
+			$arrFLibRecursions = $lib->recursions($arrFCla);
+			$arr = array();
+			foreach ($arrFLibRecursions as $keyFLibRecursion => $valFLibRecursion) {
+				$arr[] = $arrFLibRecursions[$keyFLibRecursion];
+			}
+			$dataHisShow = $history->show();
+			foreach ($dataHisShow['data'] as $keyHisShow => $valHisShow) {
+				$dataHisShow['data'][$keyHisShow]['addtime'] = date('Y-m-d H:i:s', $valHisShow['addtime']);
+				$dataStuShow = $student->show($valHisShow['u_id']);
+				$dataHisShow['data'][$keyHisShow]['stu_name'] = $dataStuShow['stu_name'];
+			}
 
-		if(Request::input('search')) {
-			return view('admin/tabList', ['arr' => $dataHisShow]);
-		} else {
-			return view('admin/historyList', ['arr' => $dataHisShow, 'data' => $arr]);
+			if(Request::input('search')) {
+				return view('admin/tabList', ['arr' => $dataHisShow]);
+			} else {
+				return view('admin/historyList', ['arr' => $dataHisShow, 'data' => $arr]);
+			}
 		}
 	}
 }

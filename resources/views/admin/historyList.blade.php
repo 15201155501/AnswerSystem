@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <title>管理员列表</title>
+    <style>
+    #mark{ display:none; overflow:yes; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#000; opacity: 0.9; overflow :auto;}
+    .tabs,#closezc{ width:700px; margin:0 auto; background:#fff;}
+    .tabs{ height:100%;}
+    #closezc{ text-align:right; margin-top:50px;}
+    #closezc a{ text-decoration:none;}
+    </style>
     <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
     <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +25,7 @@
 
     <!-- fonts -->
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" /> -->
 
     <!-- ace styles -->
 
@@ -170,12 +177,17 @@
                             <td>{{$v['point']}}</td>
                             <td>{{$v['addtime']}}</td>
                             <td>
-                                <button class="btn disabled">考试详细信息</button>
+                                <button class="btn" class="zc" onclick="zc({{$v['his_id']}})">考试详细信息</button>
                             </td>
                           </tr>
                           @endforeach
                         </tbody>
                       </table>
+                      <div id="mark">
+                        <div id="closezc"><a href="javascript:void(0)">关闭</a></div>
+                        <div class="tabs"> 这里是要弹出来的内容！<br />
+                        </div>
+                      </div>
                       <table>
                         <tr>
                           <button class="btn btn-primary" onclick="funPage(1)">首页</button>&nbsp;
@@ -453,6 +465,23 @@
       $('input[id=lefile]').change(function() {
       $('#photoCover').val($(this).val());
       });
+</script>
+<script>
+// $(function(){
+  // $('.zc').click(function(){
+    
+  // })
+  function zc(id) {
+    $('#mark').show();
+    var url = "{{url('historyList')}}";
+    var data = {his_id:id, act:'mark'};
+    $.get(url, data, function(e){
+      $("#mark").html("<div id='closezc'><a href='javascript:void(0)'>关闭</a></div>"+e);
+    })
+  }
+  $("#closezc a").click(function(){
+    $("#mark").hide();
+  })
 </script>
   <div style="display:none">
   </div>   
