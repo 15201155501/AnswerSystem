@@ -40,7 +40,7 @@ class Permission
                     $data[$k]['son']=$arr;
                 }
        }
-       //print_r($data);die;
+       // print_r($data);die;
         view()->share('main',$data);
         return $next($request);
     }

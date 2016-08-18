@@ -148,7 +148,9 @@ class ExamModel extends Model
         $arrFile = json_decode($jsonFile, true);
 
         //判断每道答题是否正确
+        print_r($arrCommit);
         ksort($arrCommit);
+        print_r($arrCommit);
         foreach ($arrFile as $keyFile => $valFile) {
             foreach ($arrCommit as $keyCommit => $valCommit) {
                 if ($valFile['qid'] == $keyCommit) {
@@ -223,10 +225,18 @@ class ExamModel extends Model
             'his_name' => Session::get('em_name'),
             'point' => $point,
             'addtime' => time(),
-            'ali_url' => $filename
+            'ali_url' => $filename,
+            'c_id' => Session::get('c_id')
         );
 
         $res = DB::table('history')->insert($data);
+        if ($res){
+            $arr = array();
+            $arr['stu_id'] = Session::get('u_id');
+            $arr['em_id'] = Session::get('em_id');
+            // print_r($arr);die;
+            DB::table('students_exam')->insert($arr);
+        }
 
         return $point;
     }

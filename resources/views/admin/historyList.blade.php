@@ -79,7 +79,7 @@
           <i class="icon-home home-icon"></i>
           <a href="#">首页</a>
         </li>
-        <li class="active">我的面板》修改密码</li>
+        <li class="active">我的面板》成绩查看</li>
       </ul><!-- .breadcrumb -->
 
       <div class="nav-search" id="nav-search">
@@ -93,7 +93,7 @@
     </div>
      <div class="page-content"> 
       <div class="page-header"> 
-       <h1> 邮箱设置<small> <i class="icon-double-angle-right"></i></small> </h1> 
+       <h1> 成绩查看<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
 
@@ -104,7 +104,34 @@
         <div class="row"> 
          <div class="col-xs-12"> 
           <div class="table-responsive"> 
-          <center>
+          <center><table width="100%" height="100px">
+            <tr>
+              <td>
+                {{-- */$i=0;/* --}}
+                @foreach($data as $key => $v)
+                  @if($v['level'] == '0')
+                  {{-- */$i++;/* --}}
+                  <input type="radio" name="lock" onclick="unlockSelect({{$v['c_id']}})">
+                  <select name="c_id" id="select_{{$v['c_id']}}" onchange="funPage(1)">
+                  <option value="{{$v['c_id']}}">{{str_repeat('__', $v['level'])}}{{$v['c_name']}}</option>
+                  @else
+                  <option value="{{$v['c_id']}}">{{str_repeat('__', $v['level'])}}{{$v['c_name']}}</option>
+                  @endif
+                  @if($key+1 < count($data))
+                    @if($data[$key+1]['level'] == '0')
+                      </select>
+                    @endif
+                  @endif
+                  @if($i%8 == 0)
+                    </td></tr><tr><td>
+                  @endif
+                 @endforeach
+                 <!-- <input type="radio" name="lock" id="radioInp" onclick="unlockSelect('input')">
+                 <input type="text" name="c_name" id="input" disabled onblur="c_nameSearch()"> -->
+               </td>
+            </tr>
+          </table>
+          <div id="div1">
            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                         <thead>
                         
@@ -115,20 +142,20 @@
                                 <span class="lbl"></span>
                               </label>
                             </th>
-                            <th>用户名称</th>
-                            <th>密码</th>
-                            <th>Email</th>
-                            
+                            <th>学生姓名</th>
+                            <th>试卷名称</th>
+                            <th>考试成绩</th>
+                            <th>试卷提交时间</th>
 
                             <th>
                               <i class="icon-time bigger-110 hidden-480"></i>
-                              管理员操作
+                              
                             </th>
                           </tr>
                         </thead>
 
                         <tbody>
-                        @foreach($arr as $v)
+                        @foreach($arr['data'] as $v)
                           <tr>
                             <td class="center">
                               <label>
@@ -137,18 +164,31 @@
                               </label>
                             </td>
                             <td>
-                              <a href="#">{{$v['username']}}</a>
+                              <a href="#">{{$v['stu_name']}}</a>
                             </td>
-                            <td>{{$v['password']}}</td>
-                            
-                            <td>{{$v['email']}}</td>
+                            <td>{{$v['his_name']}}</td>
+                            <td>{{$v['point']}}</td>
+                            <td>{{$v['addtime']}}</td>
                             <td>
-                                <a href="owner_del?id={{$v['id']}}">删除</a>| <a href="">修改</a>
+                                <button class="btn disabled">考试详细信息</button>
                             </td>
                           </tr>
                           @endforeach
                         </tbody>
                       </table>
+                      <table>
+                        <tr>
+                          <button class="btn btn-primary" onclick="funPage(1)">首页</button>&nbsp;
+                          <button class="btn btn-primary" onclick="funPage({{$arr['prev']}})">上一页</button>&nbsp;
+                          <button class="btn btn-primary" onclick="funPage({{$arr['next']}})">下一页</button>&nbsp;
+                          <button class="btn btn-primary" onclick="funPage({{$arr['last']}})">尾页</button>&nbsp;
+                          <!-- <td><a href="{{url('historyList')}}?page=1">首页</a>
+                          <a href="{{url('historyList')}}?page={{$arr['prev']}}">上一页</a>
+                          <a href="{{url('historyList')}}?page={{$arr['next']}}">下一页</a>
+                          <a href="{{url('historyList')}}?page={{$arr['last']}}">尾页</a></td> -->
+                        </tr>
+                      </table>
+                      </div>
            </center>           
           </div>
           <!-- /.table-responsive --> 
@@ -341,6 +381,73 @@
           }
         });
       }
+</script>
+<script>
+  $(function($) {
+    $('select').attr('disabled',true);
+    $('select').attr('name','');
+    $("input[type=radio]:checked").attr('checked',false);
+    // $('#select_'+id).attr("disabled",false);
+    // $('#select_'+id).attr('name','c_id');
+  });
+  function unlockSelect(id)
+  {
+    if (id == 'input') {
+      $('#input').attr("disabled",false);
+    } else {
+      $('#input').attr("disabled",true);
+      $('select').attr('disabled',true);
+      $('select').attr('name','');
+      $('#select_'+id).attr("disabled",false);
+      $('#select_'+id).attr('name','c_id');
+    }
+  }
+  function c_nameSearch()
+  {
+      var search = $("#input").val();
+      var url = "{{url('historyList')}}";
+      var data = {page:1, c_name:search};
+      alert(search)
+      $.get(url, data, function(e){
+        console.log(e)
+        $('#div1').html(e)
+      });
+  }
+  function funPage(page)
+  {
+    var url = "{{url('historyList')}}";
+    if ($('#radioInp').attr('checked') == 'checked') {
+      var input = $('#input').val(); 
+      var data = {page:page, c_name:input};
+      $.get(url, data, function(e){
+        console.log(e)
+        $('#div1').html(e)
+      });
+    } else if ($("input[type=radio]").attr('checked') == 'checked') {
+      var search = $("select").val();
+      var data = {page:page, search:search};
+      $.get(url, data, function(e){
+        console.log(e)
+        $('#div1').html(e)
+      });
+    } else {
+      var data = {page:page};
+      $.get(url, data, function(e){
+        console.log(e)
+      });
+    }
+    
+    
+  }
+  function funSearch(id)
+  {
+    var c_id = $('#select_'+id).val();
+    var url = "{{url('historyList')}}";
+    var data = {act:'search', c_id:id};
+    $.get(url, data, function(e) {
+      console.log(e)
+    })
+  }
 </script>
 <script type="text/javascript">
       $('input[id=lefile]').change(function() {

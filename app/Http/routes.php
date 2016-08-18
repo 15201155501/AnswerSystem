@@ -104,6 +104,6 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::get('test_del','Admin\TestController@test_del');
 	Route::get('generate_testPro','Admin\TestController@generate_testPro');//生成试卷
 
-	
+	Route::get('historyList','Admin\HistoryController@lists');//成绩查看
 });
 	
