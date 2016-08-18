@@ -47,7 +47,8 @@
 	 */
 	Route::get('login','Admin\LoginController@index');//登陆
 	Route::get('login_submit','Admin\LoginController@login_submit');
-	Route::get('qqlogin','Admin\LoginController@qqlogin');//qq登陆
+	Route::get('loginout','Admin\LoginController@loginout');//退出
+	
 
 //后台路由组
 Route::group(['middleware'=>'Permission'],function(){
