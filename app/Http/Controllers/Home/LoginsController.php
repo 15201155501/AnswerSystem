@@ -33,6 +33,7 @@ class LoginsController extends Controller{
 			if($users){
 				Session::put('username',$data['stu_name']);
 				Session::put('u_id',$users['stu_id']);
+				Session::put('c_id',$users['c_id']);
 				Session::save();
 				//$username = Session::get('username');
 				echo 1;die;

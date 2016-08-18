@@ -49,6 +49,5 @@ class Permission
             view()->share('header',$username);
             return $next($request); 
         }
-        
     }
 }

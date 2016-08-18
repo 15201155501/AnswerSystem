@@ -119,7 +119,15 @@ class UploadFileController extends Controller
 			$lib = new Lib;
 			$arrFLabelSelect = $label->select();
 			$arrFLibRecursion = $lib->recursion($arrFLabelSelect);
-			return view('admin/uploadFile', ['arr' => $arrFLibRecursion]);
+			foreach ($arrFLibRecursion as $keyFLibRecursion => $valFLibRecursion) {
+				if ($valFLibRecursion['level'] == '3') {
+					continue;
+				}
+				$arrCallback[] = $arrFLibRecursion[$keyFLibRecursion];
+				// ksort($arrFLibRecursion[$keyFLibRecursion]);
+			}
+			
+			return view('admin/uploadFile', ['arr' => $arrCallback]);
 		}
 		
 	}
