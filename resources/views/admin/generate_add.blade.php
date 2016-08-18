@@ -110,7 +110,7 @@
             <tr>
               <td align="center">试卷名称</td>
               <td>
-                <input type="text" name="em_name"><span id="check_name"></span>
+                <input type="text" name="em_name" onblur="aa()"><span id="check_name"></span>
               </td>
             </tr>
             <tr>
@@ -392,6 +392,7 @@ $(function(){
         }
     }
     function submits(){
+      //alert(1);
         var start_time = $("#start_time").val();
         var end_time = $("#end_time").val();
         var em_name = $("input[name='em_name']").val();
@@ -399,16 +400,19 @@ $(function(){
             alert('任何一项都不能为空');
             return false;
         }
-        if(checks()&&aa()){
+        if(checks()&&aa() == true){
             return true;
         }else{
             return false;
         }
     }
     var i = '';
-    $("input[name='em_name']").blur(function aa(){
+    function aa(){
         var em_name = $("input[name='em_name']").val();
         //alert(em_name);
+        if(em_name == ''){
+          $("#check_name").html('试卷名不能为空');
+        }else{
         $.get('check_test',{'em_name':em_name},function(e){
             if(e == 1){
                 $("#check_name").html('试卷名已存在，换一个吧。');
@@ -419,5 +423,6 @@ $(function(){
             }
         });
         return i;
-    });
+      }
+    }
 </script>

@@ -58,7 +58,7 @@ class TestController extends Controller{
     {
         $test_data = Request::all();
         unset($test_data['_token']);
-        print_r($test_data);die;
+        //print_r($test_data);die;
         $res = DB::table('exam')->insert($test_data);
         if($res){
             echo "<script>alert('添加成功');location.href='generate_add';</script>";
@@ -143,7 +143,7 @@ class TestController extends Controller{
 		//$arr_db = DB::select('select * from questions limit 10');
 		//print_r($arr_db);die;
 		foreach ($arr_db as $key_db => $v_db) {
-			$str = file_get_contents('Admin/'.$v_db['tid'].'.js');
+			$str = file_get_contents($v_db['tid'].'.js');
 			if(!empty($str)){
 				$json_arr = explode(' ', $str);
 				foreach ($json_arr as $key => $v) {
@@ -173,6 +173,7 @@ class TestController extends Controller{
 		//print_r($arr_db);die;
 
         $em_info = json_encode($arr_db);
+        //echo $em_info;die;
         $upt_data = [
 			'em_info' => $em_info,
 			'test_str' => $test_str,

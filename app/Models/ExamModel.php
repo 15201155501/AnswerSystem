@@ -19,7 +19,7 @@ class ExamModel extends Model
     public function getExamList(){
         //获取登陆学生的id
         $stu_id = Session::get('u_id');
-
+        //echo $stu_id;die;
         //判断此用户是否qq用户
         if (!is_numeric($stu_id)) {
             echo "<script> var s = window.confirm('请先完整您的信息');if (s) {
@@ -30,10 +30,11 @@ class ExamModel extends Model
         $info = DB::table('students')->select('c_id')->where('stu_id',$stu_id)->first();
 
         $c_id = $info['c_id'];
-
-        $em_major = DB::table('class')->select('pid')->where('c_id',$c_id)->first();
-
-        $exam = DB::table('exam')->where('em_major',$em_major)->get();
+        //echo $c_id;die;
+        $em_major = DB::table('label')->select('pid')->where('lid',$c_id)->first();
+        //print_r($em_major);die;
+        //echo $em_major['pid'];die;
+        $exam = DB::table('exam')->where('em_major',$em_major['pid'])->get();
 
         return $exam;
     }
@@ -56,8 +57,10 @@ class ExamModel extends Model
      */
     public function getTest($data)
     {
+        // print_r($data);die;
         $data = json_decode($data,true);
-
+        //dd($data);
+        // print_r($data);die;
         //定义个空数组，存取打乱后的试卷信息
         $arr = array();
         $arrNum = array('A', 'B', 'C', 'D', 'E', 'F', 'G');
