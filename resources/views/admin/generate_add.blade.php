@@ -133,9 +133,9 @@
                 <select class="" name="em_major" id="jie" disabled>
                     <option value="-1">--请选择--</option>
                 </select>阶段
-                <select class="" name="cid" id="ban" disabled>
+<!--                 <select class="" name="cid" id="ban" disabled>
                     <option value="-1">--请选择--</option>
-                </select>班级
+                </select>班级 -->
               </td>
             </tr>
             <tr>
@@ -329,7 +329,7 @@
 <script src="jquery.js"></script>
 <script type="text/javascript">
 $(function(){
-        $("#xue,#zhuan,#jie").change(function(){
+        $("#xue,#zhuan").change(function(){
             var id = $(this).attr('id');
             //alert(id);
             var pid = $(this).val();
@@ -342,12 +342,8 @@ $(function(){
                 if(id == 'xue'){
                     $("#zhuan").html(html).removeAttr('disabled');
                     $("#jie").attr('disabled','disabled').html(html);
-                    $("#ban").attr('disabled','disabled').html(html);
-                }else if(id == 'zhuan'){
-                    $("#jie").html(html).removeAttr('disabled');
-                    $("#ban").attr('disabled','disabled').html(html);
                 }else{
-                    $("#ban").html(html).removeAttr('disabled');
+                    $("#jie").html(html).removeAttr('disabled');
                 }
             });
         });
@@ -396,6 +392,11 @@ $(function(){
         var start_time = $("#start_time").val();
         var end_time = $("#end_time").val();
         var em_name = $("input[name='em_name']").val();
+        var jie = $("#jie").val();
+        if(jie == '-1'){
+          alert('专业还没选呢');
+          return false;
+        }
         if(start_time == ''&&end_time==''&&em_name == ''){
             alert('任何一项都不能为空');
             return false;
