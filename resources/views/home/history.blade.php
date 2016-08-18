@@ -21,7 +21,7 @@
 	</ol>
 		<ol style="list-style:none;">
 		@foreach($val['options'] as $k => $v)
-			<li><input type="radio" name="{{$val['qid']}}"
+			<li><input type="radio" name="{{$val['qid']}}" disabled>
 				<?php if(isset($val['commit']) && $val['commit'] == $k) echo 'checked';?>
 			 value="">&nbsp;&nbsp;{{$v}}</li>
 		@endforeach
@@ -42,7 +42,7 @@
 	</ol>
 		<ol style="list-style:none;">
 		@foreach($val['options'] as $k => $v)
-			<li><input type="checkbox" name="{{$val['qid']}}"
+			<li><input type="checkbox" name="{{$val['qid']}}" disabled
 				<?php 
 					if (isset($val['commit'])){
 						foreach ($val['commit'] as $kCom => $vCom) {
@@ -71,7 +71,7 @@
 		@endif
 	</ol>
 		<ol style="list-style:none;">
-			<input type="radio" 
+			<input type="radio" disabled
 				<?php 
 					if(isset($val['commit'])){
 						if ($val['commit'] == 'a') {
@@ -80,7 +80,7 @@
 					}
 				?>
 			>对
-			<input type="radio" 
+			<input type="radio" disabled
 				<?php 
 					if(isset($val['commit'])){
 						if ($val['commit'] == 'b') {

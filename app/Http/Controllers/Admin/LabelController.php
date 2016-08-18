@@ -30,6 +30,10 @@ class LabelController extends Controller
 			}
 		}
 
+		if (Request::input('act') == 'ajax') {
+			return DB::tabale('label')->where('lname', Request::input('act'))->first();
+		}
+
 		//展示表单添加页面
 		else {
 			$arr = DB::table('label')->get();
