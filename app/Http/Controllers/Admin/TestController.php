@@ -58,7 +58,7 @@ class TestController extends Controller{
     {
         $test_data = Request::all();
         unset($test_data['_token']);
-        print_r($test_data);die;
+        //print_r($test_data);die;
         $res = DB::table('exam')->insert($test_data);
         if($res){
             echo "<script>alert('添加成功');location.href='generate_add';</script>";
