@@ -52,7 +52,7 @@
 <center><button id="dosubmit"><font  style="font-size:30px;">提交试卷</font></button>&nbsp;<button><font  style="font-size:30px;">检测登陆</font></button></center>
 </body>
 <script src="Home/lib/jquery.js"></script>
-<script>
+<script>	
 	//禁止右键菜单查看源码
 	$(document).bind("contextmenu",function(e){   
 		return false;
@@ -86,10 +86,12 @@
 		data = $('#myForm').serialize();
 		//alert(data);
 		$.get('checkExam',data,function(msg){
-			console.log(msg)
-			// alert('你的考试成绩为：'+msg);
+			// console.log(msg)
+			alert('你的考试成绩为：'+msg);
 		});
 	}
+	//禁止用F5键
+	
 </script>
 
 </html>

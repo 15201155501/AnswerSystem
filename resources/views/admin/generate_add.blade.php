@@ -110,7 +110,7 @@
             <tr>
               <td align="center">试卷名称</td>
               <td>
-                <input type="text" name="em_name"><span id="check_name"></span>
+                <input type="text" name="em_name" onblur="aa()"><span id="check_name"></span>
               </td>
             </tr>
             <tr>
@@ -133,9 +133,9 @@
                 <select class="" name="em_major" id="jie" disabled>
                     <option value="-1">--请选择--</option>
                 </select>阶段
-                <select class="" name="cid" id="ban" disabled>
+<!--                 <select class="" name="cid" id="ban" disabled>
                     <option value="-1">--请选择--</option>
-                </select>班级
+                </select>班级 -->
               </td>
             </tr>
             <tr>
@@ -329,7 +329,7 @@
 <script src="jquery.js"></script>
 <script type="text/javascript">
 $(function(){
-        $("#xue,#zhuan,#jie").change(function(){
+        $("#xue,#zhuan").change(function(){
             var id = $(this).attr('id');
             //alert(id);
             var pid = $(this).val();
@@ -342,12 +342,8 @@ $(function(){
                 if(id == 'xue'){
                     $("#zhuan").html(html).removeAttr('disabled');
                     $("#jie").attr('disabled','disabled').html(html);
-                    $("#ban").attr('disabled','disabled').html(html);
-                }else if(id == 'zhuan'){
-                    $("#jie").html(html).removeAttr('disabled');
-                    $("#ban").attr('disabled','disabled').html(html);
                 }else{
-                    $("#ban").html(html).removeAttr('disabled');
+                    $("#jie").html(html).removeAttr('disabled');
                 }
             });
         });
@@ -392,23 +388,32 @@ $(function(){
         }
     }
     function submits(){
+      //alert(1);
         var start_time = $("#start_time").val();
         var end_time = $("#end_time").val();
         var em_name = $("input[name='em_name']").val();
+        var jie = $("#jie").val();
+        if(jie == '-1'){
+          alert('专业还没选呢');
+          return false;
+        }
         if(start_time == ''&&end_time==''&&em_name == ''){
             alert('任何一项都不能为空');
             return false;
         }
-        if(checks()&&aa()){
+        if(checks()&&aa() == true){
             return true;
         }else{
             return false;
         }
     }
     var i = '';
-    $("input[name='em_name']").blur(function aa(){
+    function aa(){
         var em_name = $("input[name='em_name']").val();
         //alert(em_name);
+        if(em_name == ''){
+          $("#check_name").html('试卷名不能为空');
+        }else{
         $.get('check_test',{'em_name':em_name},function(e){
             if(e == 1){
                 $("#check_name").html('试卷名已存在，换一个吧。');
@@ -419,5 +424,6 @@ $(function(){
             }
         });
         return i;
-    });
+      }
+    }
 </script>

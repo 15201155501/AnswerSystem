@@ -63,7 +63,7 @@
       </script>
 
       <div class="main-container-inner">
-        <a class="menu-toggler" id="menu-toggler" href="#">
+        <a class="menu-toggler" id="menu-toggler" href="">
           <span class="menu-text"></span>
         </a>
 
@@ -79,7 +79,7 @@
           <i class="icon-home home-icon"></i>
           <a href="#">首页</a>
         </li>
-        <li class="active">我的面板》修改密码</li>
+        <li class="active">学生管理 》学生列表</li>
       </ul><!-- .breadcrumb -->
 
       <div class="nav-search" id="nav-search">
@@ -93,7 +93,7 @@
     </div>
      <div class="page-content"> 
       <div class="page-header"> 
-       <h1> 邮箱设置<small> <i class="icon-double-angle-right"></i></small> </h1> 
+       <h1> 学生列表<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
 
@@ -151,7 +151,8 @@
                           @endforeach
                         </tbody>
                       </table>
-           </center>           
+                      <?php echo $arr->render();?>
+           </center>          
           </div>
           <!-- /.table-responsive --> 
          </div>
@@ -353,3 +354,4 @@
   </div>   
  </body>
 </html>
+

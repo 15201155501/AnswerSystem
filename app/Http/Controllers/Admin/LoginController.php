@@ -6,11 +6,6 @@ use DB, Redirect, Input, Response, Request,Session;
 
 use App\Http\Controllers\Controller;
 
-
-use App\Qqlogin\OauthClass;
-
-
-
 class LoginController extends Controller{
 	/**
 	 * 后台首页
@@ -44,17 +39,16 @@ class LoginController extends Controller{
 				echo 0;die;
 			}
 	}
+	
 	/**
-	 * qq 登陆
+	 * 退出
 	 * @author jnn <15210121352@163.com>
 	 * @version 0.0.1
 	 */
-	public function qqlogin()
+	public function loginout()
 	{
-		//实例化
-		$Oauth=new OauthClass();
-		//var_dump($Oauth);
-		$Oauth->qq_login();
+		Session::forget('id');
+		return view('Admin/login');
 	}
 
 
