@@ -27,11 +27,11 @@ class ExamModel extends Model
         }
 
         //获取登陆学生的信息
-        $info = DB::table('students')->select('c_id')->where('stu_id',$stu_id)->first();
+        $info = DB::table('students')->select('lid')->where('stu_id',$stu_id)->first();
 
-        $c_id = $info['c_id'];
-        //echo $c_id;die;
-        $em_major = DB::table('label')->select('pid')->where('lid',$c_id)->first();
+        $lid = $info['lid'];
+        //echo $lid;die;
+        $em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
         //print_r($em_major);die;
         //echo $em_major['pid'];die;
         $exam = DB::table('exam')->where('em_major',$em_major['pid'])->get();
@@ -227,7 +227,7 @@ class ExamModel extends Model
             'point' => $point,
             'addtime' => time(),
             'ali_url' => $filename,
-            'c_id' => Session::get('c_id')
+            'lid' => Session::get('lid')
         );
 
         $res = DB::table('history')->insert($data);
