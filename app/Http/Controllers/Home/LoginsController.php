@@ -50,7 +50,7 @@ class LoginsController extends Controller{
 	public function logout()
 	{
 		Session::flush();
-		echo "<script>alert('退出成功');location.href='{{url('/')}}';</script>";
+		echo "<script>alert('退出成功');location.href='/';</script>";
 	}
 
 }
