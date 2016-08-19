@@ -27,11 +27,11 @@ class ExamModel extends Model
         }
 
         //获取登陆学生的信息
-        $info = DB::table('students')->select('c_id')->where('stu_id',$stu_id)->first();
+        $info = DB::table('students')->select('lid')->where('stu_id',$stu_id)->first();
 
-        $c_id = $info['c_id'];
-        //echo $c_id;die;
-        $em_major = DB::table('label')->select('pid')->where('lid',$c_id)->first();
+        $lid = $info['lid'];
+        //echo $lid;die;
+        $em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
         //print_r($em_major);die;
         //echo $em_major['pid'];die;
         $exam = DB::table('exam')->where('em_major',$em_major['pid'])->get();
@@ -129,7 +129,6 @@ class ExamModel extends Model
          * 多选是2.5分
          * 判断是2.5分
          */
-
         //每道题的详细信息
         $dan_arr_isOk = $this->get_true_num($dan);
         $check_arr_isOk = $this->get_true_num($check);
@@ -137,7 +136,6 @@ class ExamModel extends Model
         //返回分数
         $point = $dan_arr_isOk['num']*2.5+$check_arr_isOk['num']*2.5+$pan_arr_isOk['num']*2.5;
         unset($dan_arr_isOk['num'], $check_arr_isOk['num'], $pan_arr_isOk['num']);
-
         $arr = array();
         $arr = array_merge($dan_arr_isOk, $check_arr_isOk, $pan_arr_isOk);
         
@@ -176,7 +174,7 @@ class ExamModel extends Model
                 }
             }
         }
-
+        // print_r($arrFile);die;
         //对正确答案进行排序
         foreach ($arrFile as $keyFiles => $valFiles) {
             if ($valFiles['tid'] == 0) {
@@ -210,7 +208,7 @@ class ExamModel extends Model
             }   
         }
 
-
+        // print_r($arrFile);die;
         //生成静态页面
         $history =  view('home.history')->with('arr', $arrFile)->__toString();
 
@@ -227,7 +225,7 @@ class ExamModel extends Model
             'point' => $point,
             'addtime' => time(),
             'ali_url' => $filename,
-            'c_id' => Session::get('c_id')
+            'lid' => Session::get('lid')
         );
 
         $res = DB::table('history')->insert($data);
