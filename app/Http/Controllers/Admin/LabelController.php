@@ -94,6 +94,5 @@ class LabelController extends Controller
 			return view('admin/listLabel', ['arr' => $arrFLib]);
 		}
 	}
-
 }
 ?>

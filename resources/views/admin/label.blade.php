@@ -410,10 +410,9 @@
         // alert($('#lnameSpan').val())
         // alert($('#lnameSpan').val())
         if (funCheck()) {
-          alert(1)
           return true;
         } else {
-          alert(2)
+          //alert(2)
           return false;
         }
         
