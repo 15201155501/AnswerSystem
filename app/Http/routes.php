@@ -87,10 +87,6 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::post('student_pro','Admin\StudentController@student_pro');
 	Route::get('stu_excel','Admin\ExcelController@import');//批量添加
 	Route::get('student_list','Admin\StudentController@student_list');//学生列表
-
-	Route::get('class_add','Admin\ClassController@index');//班级添加
-	Route::get('select_class','Admin\ClassController@select_class');
-	Route::get('class_list','Admin\ClassController@class_list');//班级列表
 	
 	Route::get('exam_pri_add','Admin\ExamPriController@index');//试卷权限添加
 
