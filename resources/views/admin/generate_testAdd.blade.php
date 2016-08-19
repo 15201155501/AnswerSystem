@@ -111,9 +111,13 @@
               <td align="center">试卷名称</td>
               <td>
                 <select class="" name="em_id">
-                    @foreach($data['em_name'] as $v)
+                @if(empty($data['em_name']))
+                  <option value="">去添加一些试卷吧</option>
+                @else
+                   @foreach($data['em_name'] as $v)
                         <option value="{{$v['em_id']}}">{{ $v['em_name'] }}</option>
                     @endforeach
+                @endif
                 </select>
               </td>
             </tr>
