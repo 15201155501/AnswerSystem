@@ -135,16 +135,16 @@
               </td>
             </tr>
             <tr>
-              <td align="center">学生班级</td>
+              <td align="center">学生专业</td>
               <td>
                   <select name="c_id" id="">
                     <option value="请选择">请选择...</option>
                     @foreach($arr as $v)
-                    <option value="{{$v['c_id']}}">
+                    <option value="{{$v['lid']}}">
                       @if( $v['level']  == 0)
-                      {{ $v['c_name'] }}
+                      {{ $v['lname'] }}
                       @else
-                      ||--{{ $v['c_name'] }}
+                      ||--{{ $v['lname'] }}
                       @endif
                     </option>
                     @endforeach
