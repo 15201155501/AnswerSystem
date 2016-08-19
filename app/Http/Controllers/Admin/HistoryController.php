@@ -16,11 +16,9 @@ class HistoryController extends Controller
 	{
 		if (Request::input('act') == 'mark') {
 			$arr = array();
-			// print_r(Request::input('his_id'));die;
 			$arr = DB::table('history')->select('history_url')->where('his_id', Request::input('his_id'))->first();
 			return file_get_contents($arr['history_url']);
-		}
-		else {
+		} else {
 			$history = new History;
 			$student = new Student;
 			$label = new Label;
@@ -41,7 +39,7 @@ class HistoryController extends Controller
 				$dataHisShow['data'][$keyHisShow]['stu_name'] = $dataStuShow['stu_name'];
 			}
 
-			if(Request::input('search')) {
+			if(Request::input('search') || Request::input('page')) {
 				return view('admin/tabList', ['arr' => $dataHisShow]);
 			} else {
 				return view('admin/historyList', ['arr' => $dataHisShow, 'data' => $arr]);

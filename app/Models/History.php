@@ -19,11 +19,6 @@ class History extends Model
 		$arr_page['next'] = $page+1>$page_size ? $page_size : $page+1;
 		$arr_page['last'] = $page_size;
 		$limit = ($page-1)*$num;
-		// if (Request::input('c_name')) {
-		// 	$sql = 'select stu_id from students where stu_name like %'.Request::input('c_name').'%';
-		// 	var_dump(DB::query($sql));die;
-		// 	// DB::table('students')->where('stu_name', Request::input('c_name'))->get();
-		// }else
 		if (Request::input('search')) {
 			$arr_page['data'] = DB::table('history')->where('c_id', Request::input('search'))->orderBy('his_id', 'desc')->skip($limit)->take($num)->get();
 		} else {

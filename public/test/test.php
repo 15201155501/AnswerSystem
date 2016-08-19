@@ -91,7 +91,13 @@
 		});
 	}
 	//禁止用F5键
-	
+	document.onkeydown = function(event){
+		if(event.keyCode == '116'){
+			event.keyCode = 0;
+		    event.cancelBubble = true;
+		    return false;
+		}
+	}
 </script>
 
 </html>

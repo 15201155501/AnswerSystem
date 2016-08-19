@@ -421,7 +421,6 @@
       var data = {page:1, lname:search};
       alert(search)
       $.get(url, data, function(e){
-        console.log(e)
         $('#div1').html(e)
       });
   }
@@ -432,20 +431,18 @@
       var input = $('#input').val(); 
       var data = {page:page, lname:input};
       $.get(url, data, function(e){
-        console.log(e)
         $('#div1').html(e)
       });
     } else if ($("input[type=radio]").attr('checked') == 'checked') {
       var search = $("select").val();
       var data = {page:page, search:search};
       $.get(url, data, function(e){
-        console.log(e)
         $('#div1').html(e)
       });
     } else {
       var data = {page:page};
       $.get(url, data, function(e){
-        console.log(e)
+        $('#div1').html(e)
       });
     }
     
