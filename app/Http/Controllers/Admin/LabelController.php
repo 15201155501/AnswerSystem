@@ -26,12 +26,12 @@ class LabelController extends Controller
 
 			//调用 label 的 add方法
 			if ($label->add($arr)) {
-				return redirect('label');
+				return redirect(url('label'));
 			}
 		}
 
 		if (Request::input('act') == 'ajax') {
-			return DB::tabale('label')->where('lname', Request::input('act'))->first();
+			return DB::table('label')->where('lname', Request::input('lname'))->first();
 		}
 
 		//展示表单添加页面

@@ -18,7 +18,6 @@ class ExamController extends Controller
         //实例化model
         $model = new ExamModel();
         $arr['examList'] = $model -> getExamList();
-        //print_r($arr['examList']);die;
         return view('home.exam',$arr);
     }
 

@@ -25,10 +25,13 @@ class HistoryController extends Controller
 			$student = new Student;
 			$label = new Label;
 			$lib = new Lib;
-			$arrFCla = DB::table('class')->get();
-			$arrFLibRecursions = $lib->recursions($arrFCla);
+			$arrFCla = DB::table('label')->get();
+			$arrFLibRecursions = $lib->recursion($arrFCla);
 			$arr = array();
 			foreach ($arrFLibRecursions as $keyFLibRecursion => $valFLibRecursion) {
+				if ($valFLibRecursion['level'] == '2' || $valFLibRecursion['level'] == '1') {
+					continue;
+				}
 				$arr[] = $arrFLibRecursions[$keyFLibRecursion];
 			}
 			$dataHisShow = $history->show();
