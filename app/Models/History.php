@@ -11,7 +11,7 @@ class History extends Model
 {
 	public function show()
 	{
-		$size = DB::table('Students')->count();
+		$size = DB::table('history')->count();
 		$num = 2;
 		$page_size = ceil($size/2);
 		$page = Request::input('page') ? Request::input('page') : 1;

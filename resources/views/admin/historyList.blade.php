@@ -118,11 +118,11 @@
                 @foreach($data as $key => $v)
                   @if($v['level'] == '0')
                   {{-- */$i++;/* --}}
-                  <input type="radio" name="lock" onclick="unlockSelect({{$v['c_id']}})">
-                  <select name="c_id" id="select_{{$v['c_id']}}" onchange="funPage(1)">
-                  <option value="{{$v['c_id']}}">{{str_repeat('__', $v['level'])}}{{$v['c_name']}}</option>
+                  <input type="radio" name="lock" onclick="unlockSelect({{$v['lid']}})">
+                  <select name="lid" id="select_{{$v['lid']}}" onchange="funPage(1)">
+                  <option value="{{$v['lid']}}">{{str_repeat('__', $v['level'])}}{{$v['lname']}}</option>
                   @else
-                  <option value="{{$v['c_id']}}">{{str_repeat('__', $v['level'])}}{{$v['c_name']}}</option>
+                  <option value="{{$v['lid']}}">{{str_repeat('__', $v['level'])}}{{$v['lname']}}</option>
                   @endif
                   @if($key+1 < count($data))
                     @if($data[$key+1]['level'] == '0')
@@ -134,7 +134,7 @@
                   @endif
                  @endforeach
                  <!-- <input type="radio" name="lock" id="radioInp" onclick="unlockSelect('input')">
-                 <input type="text" name="c_name" id="input" disabled onblur="c_nameSearch()"> -->
+                 <input type="text" name="lname" id="input" disabled onblur="lnameSearch()"> -->
                </td>
             </tr>
           </table>
@@ -400,7 +400,7 @@
     $('select').attr('name','');
     $("input[type=radio]:checked").attr('checked',false);
     // $('#select_'+id).attr("disabled",false);
-    // $('#select_'+id).attr('name','c_id');
+    // $('#select_'+id).attr('name','lid');
   });
   function unlockSelect(id)
   {
@@ -411,14 +411,14 @@
       $('select').attr('disabled',true);
       $('select').attr('name','');
       $('#select_'+id).attr("disabled",false);
-      $('#select_'+id).attr('name','c_id');
+      $('#select_'+id).attr('name','lid');
     }
   }
-  function c_nameSearch()
+  function lnameSearch()
   {
       var search = $("#input").val();
       var url = "{{url('historyList')}}";
-      var data = {page:1, c_name:search};
+      var data = {page:1, lname:search};
       alert(search)
       $.get(url, data, function(e){
         console.log(e)
@@ -430,7 +430,7 @@
     var url = "{{url('historyList')}}";
     if ($('#radioInp').attr('checked') == 'checked') {
       var input = $('#input').val(); 
-      var data = {page:page, c_name:input};
+      var data = {page:page, lname:input};
       $.get(url, data, function(e){
         console.log(e)
         $('#div1').html(e)
@@ -453,9 +453,9 @@
   }
   function funSearch(id)
   {
-    var c_id = $('#select_'+id).val();
+    var lid = $('#select_'+id).val();
     var url = "{{url('historyList')}}";
-    var data = {act:'search', c_id:id};
+    var data = {act:'search', lid:id};
     $.get(url, data, function(e) {
       console.log(e)
     })
@@ -476,11 +476,15 @@
     var url = "{{url('historyList')}}";
     var data = {his_id:id, act:'mark'};
     $.get(url, data, function(e){
-      $("#mark").html("<div id='closezc'><a href='javascript:void(0)'>关闭</a></div>"+e);
+      $("#mark").html("<div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>"+e);
     })
   }
-  $("#closezc a").click(function(){
+  function funClose()
+  {
     $("#mark").hide();
+  }
+  $("#closezc a").click(function(){
+    alert(1)
   })
 </script>
   <div style="display:none">

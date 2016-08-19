@@ -106,7 +106,7 @@
          <div class="col-xs-12"> 
           <div class="table-responsive"> 
           
-          <form action="{{url('label')}}" method="post" enctype="multipart/form-data" onsubmit="return funSubmit()">
+          <form action="{{url('label')}}" method="post" enctype="multipart/form-data" onsubmit="return funSub()">
           <center>
            <table id="sample-table-1" class="table table-striped table-bordered table-hover"> 
             <tr>
@@ -123,17 +123,16 @@
             <tr>
               <td align="center">标签名称</td>
               <td>
-                <input type="text" name="lname" onblur="funCheck(this.value)"> <span color='red' id="lnameSpan">alsjdf</span>
+                <input type="text" name="lname" onblur="funCheck()" id="lname"> <span color='red' id="lnameSpan" value=""></span>
               </td>
             </tr>
             <tr>
               <td align="right"><input type="resdet" class="btn"></td>
               <td align="left">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                <input type="hidden" name="act" value="ad">
-                <input type="submit" class="btn btn-info" value="提交" onclick="funSub()" />
+                <input type="hidden" name="act" value="add">
+                <input type="submit" class="btn btn-info" value="提交"/>
               </td>
-            
             </tr>
            </table> 
            </center>
@@ -376,33 +375,46 @@
       $('input[id=lefile]').change(function() {
       $('#photoCover').val($(this).val());
       });
-      function funCheck(val)
+      function funCheck()
       {
+        var val = $('#lname').val();
         if (val == '') {
           $('#lnameSpan').html("<font color='red'>不能为空</font>");
-          function funSubmit() {
-                return false;
-          }
+          $('#lnameSpan').val('false');
+          return false;
         } else {
-          var url = "{{url('label')}}";
-          var data = {lname:val, act:'ajax'};
-          $.get{url, data, function(e){
-            if (e == '') {
-              function funSubmit() {
+          $.ajax({
+            type: "GET",
+            url: "{{url('label')}}",
+            data: "lname="+val+"&act=ajax",
+            async: false,
+            cache: false,
+            success: function(e){
+              if (e == '') {
+                $('#lnameSpan').html("<font color='red'>√</font>");
+                $('#lnameSpan').val('true');
                 return true;
-              }
-              // return true;
-            } esle {
-              function funSubmit() {
+              } else  {
+                $('#lnameSpan').html("<font color='red'>名称已存在</font>");
+                $('#lnameSpan').val('false');
                 return false;
               }
             }
-          }}
+          });
         }
       }
       function funSub()
       {
-        funCheck();
+        // alert($('#lnameSpan').val())
+        // alert($('#lnameSpan').val())
+        if ($('#lnameSpan').val()) {
+          alert(1)
+          return true;
+        } else {
+          alert(2)
+          return false;
+        }
+        
       }
 </script>
   <div style="display:none">
