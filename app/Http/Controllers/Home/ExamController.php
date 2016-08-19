@@ -51,6 +51,7 @@ class ExamController extends Controller
             echo "<script>alert('你已经考过试了');location.href='examList';</script>";
             exit();
         }
+
         //print_r($info['em_info']);die;
         //正常考试时间，获取考试内容，生成考试试卷
         $arr = $model -> getTest($info['em_info']);

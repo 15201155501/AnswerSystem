@@ -49,10 +49,32 @@
 </ol>
 </form>
 <?php echo date('Y-m-d H:i:s');?>
-<center><button id="dosubmit"><font  style="font-size:30px;">提交试卷</font></button>&nbsp;<button><font  style="font-size:30px;">检测登陆</font></button></center>
+<center><button id="dosubmit"><font  style="font-size:30px;">提交试卷</font></button>&nbsp;<button id="checkcookie"><font  style="font-size:30px;">检测登陆</font></button></center>
 </body>
 <script src="Home/lib/jquery.js"></script>
-<script>	
+<script>
+	$("#checkcookie").click(function () {
+		var cookie = <?php echo Session::get('u_id') ?>;
+		if (cookie){
+			alert('已经登录');
+		}else{
+			alert('会话失效了，请重新登录');
+			location.href="{{url('/')}}";
+		}
+	});
+
+    //获取考试结束时间
+	var endtime = <?php echo $end_time ?>;
+	//console.log(endtime);
+
+	//获取当前时间戳
+	var timestamp = String(Date.parse(new Date()));
+	var nowtime = timestamp.substring(0,10);
+	//console.log(nowtime);
+
+	//算是提交时间
+    var examtime = endtime-nowtime;
+
 	//禁止右键菜单查看源码
 	$(document).bind("contextmenu",function(e){   
 		return false;
@@ -79,7 +101,7 @@
             }   
         }, 1000);   
     }
-    // jump(10);
+	jump(examtime);
 
 	function dosubmit() {
 		//接值
@@ -88,6 +110,7 @@
 		$.get('checkExam',data,function(msg){
 			// console.log(msg)
 			alert('你的考试成绩为：'+msg);
+			location.href='examList';
 		});
 	}
 	//禁止用F5键
