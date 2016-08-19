@@ -143,7 +143,7 @@
                             <td>{{$v['stu_pwd']}}</td>
                             <td>{{$v['stu_email']}}</td>
                             <td><img src="{{$v['stu_img']}}" alt="" width="40px" height="40px"></td>
-                            <td>{{$v['c_name']}}</td>
+                            <td>{{$v['lname']}}</td>
                             <td>
                                 <a href="">删除</a>| <a href="">修改</a>
                             </td>
