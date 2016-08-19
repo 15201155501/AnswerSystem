@@ -6,38 +6,38 @@
 </head>
 <body>
 <center><h1>历史试卷</h1></center>
-<p>一、单元题</p>
+<p>一、单选题</p>
 <ol style="list-style:none;">
 @foreach($arr as $key => $val)
 	@if($val['tid'] == 0)
 		<font><b>{{$key+1}}.&nbsp;&nbsp;&nbsp;</b></font>{{$val['question']}}（）
 		@if(isset($val['is']))
 			<li><span color='red'>√</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@else
 			<li><span color='red'>×</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@endif
 	</ol>
 		<ol style="list-style:none;">
 		@foreach($val['options'] as $k => $v)
-			<li><input type="radio" name="{{$val['qid']}}" disabled>
-				<?php if(isset($val['commit']) && $val['commit'] == $k) echo 'checked';?>
-			 value="">&nbsp;&nbsp;{{$v}}</li>
+			<li><input type="radio" name="{{$val['qid']}}" disabled
+				<?php if(isset($val['commit']) && $val['commit'] == $k) echo 'checked';?>>
+			 &nbsp;&nbsp;{{$v}}</li>
 		@endforeach
 		
 	@endif
 @endforeach
-<p>二、单元题</p>
+<p>二、多选题</p>
 @foreach($arr as $key => $val)
 	@if($val['tid'] == 1)
 		<font><b>{{$key+1}}.&nbsp;&nbsp;&nbsp;</b></font>{{$val['question']}}（）
 		@if(isset($val['is']))
 			<li><span color='red'>√</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@else
 			<li><span color='red'>×</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@endif
 	</ol>
 		<ol style="list-style:none;">
@@ -51,8 +51,8 @@
 							}
 						}
 					}
-				?>
-			 value="">&nbsp;&nbsp;{{$v}}</li>
+				?>>
+			 &nbsp;&nbsp;{{$v}}</li>
 		@endforeach
 		
 	@endif
@@ -64,10 +64,10 @@
 		<font><b>{{$key+1}}.&nbsp;&nbsp;&nbsp;</b></font>{{$val['question']}}（）
 		@if(isset($val['is']))
 			<li><span color='red'>√</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@else
 			<li><span color='red'>×</span></br>&nbsp;&nbsp; <font color="red">正确答案:{{$val['answer']}}</font>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错</li>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!-- <input type="radio" name="error_{{$val['qid']}}" value="{{$val['qid']}}">我要报错 --></li>
 		@endif
 	</ol>
 		<ol style="list-style:none;">

@@ -127,7 +127,7 @@
               </td>
             </tr>
             <tr>
-              <td align="right"><input type="resdet" class="btn"></td>
+              <td align="right"></td>
               <td align="left">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" name="act" value="add">
@@ -375,13 +375,14 @@
       $('input[id=lefile]').change(function() {
       $('#photoCover').val($(this).val());
       });
+      var only = false;
       function funCheck()
       {
         var val = $('#lname').val();
         if (val == '') {
           $('#lnameSpan').html("<font color='red'>不能为空</font>");
           $('#lnameSpan').val('false');
-          return false;
+          return only;
         } else {
           $.ajax({
             type: "GET",
@@ -393,22 +394,22 @@
               if (e == '') {
                 $('#lnameSpan').html("<font color='red'>√</font>");
                 $('#lnameSpan').val('true');
-                return true;
+                only = true;
               } else  {
                 $('#lnameSpan').html("<font color='red'>名称已存在</font>");
                 $('#lnameSpan').val('false');
-                return false;
+                only = false;
               }
             }
           });
         }
+        return only;
       }
       function funSub()
       {
         // alert($('#lnameSpan').val())
         // alert($('#lnameSpan').val())
-        if ($('#lnameSpan').val()) {
-          //alert(1)
+        if (funCheck()) {
           return true;
         } else {
           //alert(2)

@@ -426,7 +426,7 @@
       //删除角色及角色与用户关联表
       function label_del_ok(id){
         var data = {act:'labelDelOk',lid:id};
-        var url = "power_list";
+        var url = "listLabel";
         $.get(url,data,function(e){
           // alert(e)
           $('#tr_'+id).remove();

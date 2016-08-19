@@ -67,12 +67,12 @@ class LabelController extends Controller
 		} 
 
 		//标签删除
-		if (Request::input('act') == 'checkDel') {
+		if (Request::input('act') == 'labelDel') {
 			$lid = Request::input('lid');
 
 			//判断改标签下是否关联题库
 			$countFquestion = $questions->count($lid);
-			if ($countFLabel > 0){
+			if ($countFquestion > 0){
 				return 'false';
 			} else {
 				if ($label->del($lid)) {
@@ -94,6 +94,5 @@ class LabelController extends Controller
 			return view('admin/listLabel', ['arr' => $arrFLib]);
 		}
 	}
-
 }
 ?>

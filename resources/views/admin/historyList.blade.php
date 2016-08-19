@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>管理员列表</title>
     <style>
-    #mark{ display:none; overflow:yes; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#000; opacity: 0.9; overflow :auto;}
+    #mark{ display:none; overflow:yes; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#abc; opacity: 1; overflow :auto;}
     .tabs,#closezc{ width:700px; margin:0 auto; background:#fff;}
     .tabs{ height:100%;}
     #closezc{ text-align:right; margin-top:50px;}
