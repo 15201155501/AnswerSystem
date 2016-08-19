@@ -57,5 +57,10 @@ class LoginController extends Controller{
 		$Oauth->qq_login();
 	}
 
+	public function loginout()
+	{
+		Session::forget('id');
+		return Redirect('login');
+	}
 
 }

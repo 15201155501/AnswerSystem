@@ -23,7 +23,6 @@
 	Route::get('/','Home\LoginsController@index');//登陆
 	Route::get('login_pro','Home\LoginsController@login_pro');//登陆-验证
 	Route::get('logout','Home\LoginsController@logout');//登陆-验证
-	
 	//前台路由组
 	Route::group(["prefix" => "/"], function() {
 		Route::get('index','Home\HomeController@index');//前台首页
@@ -48,6 +47,7 @@
 	Route::get('login','Admin\LoginController@index');//登陆
 	Route::get('login_submit','Admin\LoginController@login_submit');
 	Route::get('qqlogin','Admin\LoginController@qqlogin');//qq登陆
+	Route::get('loginout','Admin\LoginController@loginout');//退出登录
 
 //后台路由组
 Route::group(['middleware'=>'Permission'],function(){

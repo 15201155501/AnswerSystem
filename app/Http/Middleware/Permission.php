@@ -16,6 +16,9 @@ class Permission
     public function handle($request, Closure $next)
     {
         $id=Session::get('id');
+        if($id == ''){
+          echo "<script>alert('您还没有登录，请先去登录。');location.href='login';</script>";
+        }
         if($id!=1){
                 $data=DB::table('owner_role')
                               ->join('role','role.role_id','=','owner_role.role_id')
