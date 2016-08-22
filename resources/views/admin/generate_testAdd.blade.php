@@ -130,10 +130,10 @@
                         <option value="{{ $v['lid'] }}">{{ $v['lname'] }}</option>
                     @endforeach
                 </select>学院
-                <select class="" name="lid"  id="zhuan" disabled >
+                <select class="" id="zhuan" disabled >
                     <option value="-1">--请选择--</option>
                 </select>专业
-                <select class="" id="jie" disabled>
+                <select class="" name="lid" id="jie" disabled>
                     <option value="-1">--请选择--</option>
                 </select>阶段
               </td>
