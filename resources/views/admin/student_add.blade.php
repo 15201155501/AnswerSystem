@@ -143,8 +143,12 @@
                     <option value="{{$v['lid']}}">
                       @if( $v['level']  == 0)
                       {{ $v['lname'] }}
-                      @else
+                      @elseif($v['level'] == 1)
                       ||--{{ $v['lname'] }}
+                      @elseif($v['level'] == 2)
+                      ||----{{ $v['lname'] }}
+                      @else
+                      ||------{{ $v['lname'] }}
                       @endif
                     </option>
                     @endforeach

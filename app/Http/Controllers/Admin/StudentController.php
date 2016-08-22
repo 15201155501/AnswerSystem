@@ -22,7 +22,7 @@ class StudentController extends Controller
 	{
 		$model=new \App\ClassModel();
         $class_data = $model->lst();
-        //print_r($class_data);die;
+        // print_r($class_data);die;
         return view('admin/student_add')->with('arr',$class_data);
 	}
 
