@@ -103,4 +103,3 @@ Route::group(['middleware'=>'Permission'],function(){
 
 	Route::get('historyList','Admin\HistoryController@lists');//成绩查看
 });
-	
