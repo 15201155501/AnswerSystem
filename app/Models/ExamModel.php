@@ -147,7 +147,7 @@ class ExamModel extends Model
         $u_id = Session::get('u_id');
         $jsonFile = file_get_contents('test\student'.$u_id.'.php');
         $arrFile = json_decode($jsonFile, true);
-
+        unlink('test\student'.$u_id.'.php');
         //判断每道答题是否正确
         ksort($arrCommit);
         foreach ($arrFile as $keyFile => $valFile) {
