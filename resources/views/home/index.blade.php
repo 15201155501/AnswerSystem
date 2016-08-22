@@ -86,8 +86,8 @@
     <div class="content">
       <ul id="demo">
         <li class="active">
-          <a href="index"><img src="Home/images/1.jpg"  /></a>
-          <div><a href="index">答题系统</a></div>
+          <a href="examList"><img src="Home/images/1.jpg"  /></a>
+          <div><a href="examList">你敢戳我吗</a></div>
         </li>
         <li>
           <a href="javascript:void(0);"><img src="Home/images/2.jpg"  /></a>
