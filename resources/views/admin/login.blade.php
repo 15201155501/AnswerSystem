@@ -316,10 +316,9 @@
 		$.get('login_submit',{'username':username,'password':password},function(msg){
 			//alert(msg);
 			if(msg==1){
-				alert('登陆成功');
 				window.location.href='admina';
 			}else{
-				alert('登陆失败');
+				alert('用户名或密码有误');
 			}
 		})
 
