@@ -345,6 +345,7 @@ $(function(){
                 }else{
                     $("#jie").html(html).removeAttr('disabled');
                 }
+                console.log(html)
             });
         });
     });
@@ -371,7 +372,7 @@ $(function(){
             str+='<option value="请选择">请选择</option>';
             for(var i in e){
                 //alert(e[0]['pid']);
-                str+='<option value="'+e[i]['pid']+'">'+e[i]['lname']+'</option>';
+                str+='<option value="'+e[i]['lid']+'">'+e[i]['lname']+'</option>';
             }
             $("#jie").html(str);
         });
