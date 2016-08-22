@@ -92,7 +92,6 @@
 	@endif
 @endforeach
 </ol>
-<center><button id="dosubmit"><font  style="font-size:30px;">提交试卷</font></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button><font  style="font-size:30px;">检测登陆</font></button></center>
 </body>
 <script src="Home/js/jquery.js"></script>
 <script>

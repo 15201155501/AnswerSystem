@@ -109,7 +109,13 @@
 		//alert(data);
 		$.get('checkExam',data,function(msg){
 			// console.log(msg)
-			alert('你的考试成绩为：'+msg);
+			if (msg>=60){
+				alert('嗯。。。'+msg+'一般般');
+			}else if(msg<60){
+				alert('渣渣，你的考试成绩为：'+msg);
+			}else{
+				alert('卧槽。。卧槽。。卧槽：'+msg);
+			}
 			location.href='examList';
 		});
 	}

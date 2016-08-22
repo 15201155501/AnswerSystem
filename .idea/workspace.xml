@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Home/images/1.jpg" afterPath="$PROJECT_DIR$/public/Home/images/1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Home/images/2.jpg" afterPath="$PROJECT_DIR$/public/Home/images/2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Home/images/3.jpg" afterPath="$PROJECT_DIR$/public/Home/images/3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Home/images/4.jpg" afterPath="$PROJECT_DIR$/public/Home/images/4.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/lefts.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/lefts.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/test/test.php" afterPath="$PROJECT_DIR$/public/test/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/history.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/history.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" />
     </list>
     <ignored path="AnswerSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,18 +34,28 @@
       <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/test/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2596">
-              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginsController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/LoginsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="222">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="history.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/history.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,18 +64,18 @@
       <file leaf-file-name="ExamController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
+            <state relative-caret-position="420">
               <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lefts.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/home/lefts.blade.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+            <state relative-caret-position="-56">
+              <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -84,10 +100,12 @@
         <option value="$PROJECT_DIR$/app/Models/ExamModel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/LoginsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php" />
-        <option value="$PROJECT_DIR$/public/test/test.php" />
         <option value="$PROJECT_DIR$/../../yybk/yang/head.htm" />
         <option value="$PROJECT_DIR$/../../yybk/yang/index.htm" />
         <option value="$PROJECT_DIR$/resources/views/home/lefts.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/test/test.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/history.blade.php" />
       </list>
     </option>
   </component>
@@ -389,7 +407,7 @@
       <workItem from="1471566341819" duration="11337000" />
       <workItem from="1471650037390" duration="6173000" />
       <workItem from="1471676004269" duration="1194000" />
-      <workItem from="1471828328155" duration="1278000" />
+      <workItem from="1471828328155" duration="6256000" />
     </task>
     <task id="LOCAL-00001" summary="修改历史列表文件">
       <created>1471503431684</created>
@@ -426,11 +444,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471828388975</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改细节">
+      <created>1471830801317</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1471830801317</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29632000" />
+    <option name="totallyTimeSpent" value="34610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -471,7 +496,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改历史列表文件" />
     <MESSAGE value="修改考试细节" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改考试细节" />
+    <MESSAGE value="修改细节" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改细节" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -670,14 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/test/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2596">
-          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../yybk/include/arc.archives.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4620">
@@ -720,26 +738,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/LoginsController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/home/lefts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state relative-caret-position="418">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="88" column="45" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
+        <state relative-caret-position="420">
           <caret line="122" column="1" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/lefts.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/test/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        <state relative-caret-position="68">
+          <caret line="100" column="16" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/history.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Home/LoginsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding />
         </state>
       </provider>
