@@ -20,13 +20,16 @@ class MyController extends Controller
 
         if (is_numeric($u_id)){
             //通过id查询个人信息
-            $data['info'] = DB::table('students')->where('stu_id',$u_id)->first();
+            $data['info'] = DB::table('students')->join('label','students.lid','=','label.lid')->where('stu_id',$u_id)->first();
         }else{
-            $data['info'] = DB::table('students')->where('open_id',$u_id)->first();
+            $data['info'] = DB::table('students')->join('label','students.lid','=','label.lid')->where('open_id',$u_id)->first();
         }
+        // print_r($data);die;
 
 
-        return view('home.info',$data);
+        return view('home.infos',$data);
 
     }
 }
+
+

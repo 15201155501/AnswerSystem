@@ -30,5 +30,21 @@ class lib extends Model
 		}
 		return $lists;
 	} 
+
+	public function recursions($data, $p_id=0, $level=0)
+	{
+		//定义一个静态数组
+		static $lists = array();
+
+		//递归操作
+		foreach ($data as $key => $v) {
+			if ($v['pid'] == $p_id) {
+				$v['level'] = $level;
+				$lists[] = $v;
+				$this->recursions($data,$v["c_id"],$level+1);
+			}
+		}
+		return $lists;
+	} 
 }
 ?>

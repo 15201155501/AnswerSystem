@@ -16,7 +16,10 @@ class Permission
     public function handle($request, Closure $next)
     {
         $id=Session::get('id');
-        if($id!=1){
+        if(empty($id)){
+            echo "<script>alert('请先登录哦！');location.href='login';</script>";
+        }else{
+            if($id!=1){
                 $data=DB::table('owner_role')
                               ->join('role','role.role_id','=','owner_role.role_id')
                               ->join('role_privilege','role.role_id','=','role_privilege.role_id')
@@ -33,15 +36,18 @@ class Permission
                          ->get();
                          $data[$k]['son']=$arr;
                  }
-       }else{
-                $data = DB::table('privilege')->where('pri_fid',0)->get();
-                foreach($data as $k=>$v){
-                    $arr=DB::table('privilege')->where("pri_fid",$v["pri_id"])->get();
-                    $data[$k]['son']=$arr;
-                }
-       }
-       //print_r($data);die;
-        view()->share('main',$data);
-        return $next($request);
+           }else{
+                    $data = DB::table('privilege')->where('pri_fid',0)->get();
+                    foreach($data as $k=>$v){
+                        $arr=DB::table('privilege')->where("pri_fid",$v["pri_id"])->get();
+                        $data[$k]['son']=$arr;
+                    }
+           }
+           //print_r($data);die;
+            $username=Session::get('username');
+            view()->share('main',$data);
+            view()->share('header',$username);
+            return $next($request); 
+        }
     }
 }

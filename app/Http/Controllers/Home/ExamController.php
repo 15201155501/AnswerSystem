@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\ExamModel;
 use Request,Session,DB;
-
+header('content-type:text/html;charset=utf-8');
 class ExamController extends Controller
 {
     /**
@@ -18,7 +18,6 @@ class ExamController extends Controller
         //实例化model
         $model = new ExamModel();
         $arr['examList'] = $model -> getExamList();
-        //print_r($examList);
         return view('home.exam',$arr);
     }
 
@@ -35,6 +34,7 @@ class ExamController extends Controller
         //查询试卷信息
         $model = new ExamModel();
         $info = $model -> getExamInfo($id);
+
         // dd($info);die;
         Session::put('em_id', $info['em_id']);
         Session::put('em_name', $info['em_name']);
@@ -52,8 +52,10 @@ class ExamController extends Controller
             exit();
         }
 
+        //print_r($info['em_info']);die;
         //正常考试时间，获取考试内容，生成考试试卷
         $arr = $model -> getTest($info['em_info']);
+        // print_r($arr);die;
         $u_id = Session::get('u_id');
         $arr_json = json_encode($arr);
         file_put_contents('test\student'.$u_id.'.php', $arr_json);

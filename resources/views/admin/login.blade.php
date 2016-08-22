@@ -108,7 +108,7 @@
 											</div>
 
 											<div class="social-login center">
-												<a href="qqlogin" class="btn btn-primary">
+												<a href="#" class="btn btn-primary">
 													<i class="icon-facebook"></i>
 												</a>
 

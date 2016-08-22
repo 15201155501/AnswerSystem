@@ -19,7 +19,7 @@ class ExamModel extends Model
     public function getExamList(){
         //获取登陆学生的id
         $stu_id = Session::get('u_id');
-
+        //echo $stu_id;die;
         //判断此用户是否qq用户
         if (!is_numeric($stu_id)) {
             echo "<script> var s = window.confirm('请先完整您的信息');if (s) {
@@ -27,13 +27,14 @@ class ExamModel extends Model
         }
 
         //获取登陆学生的信息
-        $info = DB::table('students')->select('c_id')->where('stu_id',$stu_id)->first();
+        $info = DB::table('students')->select('lid')->where('stu_id',$stu_id)->first();
 
-        $c_id = $info['c_id'];
-
-        $em_major = DB::table('class')->select('pid')->where('c_id',$c_id)->first();
-
-        $exam = DB::table('exam')->where('em_major',$em_major)->get();
+        $lid = $info['lid'];
+        //echo $lid;die;
+        //$em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
+        //print_r($em_major);die;
+        //echo $em_major['pid'];die;
+        $exam = DB::table('exam')->where('em_major',$lid)->get();
 
         return $exam;
     }
@@ -56,8 +57,10 @@ class ExamModel extends Model
      */
     public function getTest($data)
     {
+        // print_r($data);die;
         $data = json_decode($data,true);
-
+        //dd($data);
+        // print_r($data);die;
         //定义个空数组，存取打乱后的试卷信息
         $arr = array();
         $arrNum = array('A', 'B', 'C', 'D', 'E', 'F', 'G');
@@ -126,7 +129,6 @@ class ExamModel extends Model
          * 多选是2.5分
          * 判断是2.5分
          */
-
         //每道题的详细信息
         $dan_arr_isOk = $this->get_true_num($dan);
         $check_arr_isOk = $this->get_true_num($check);
@@ -134,7 +136,6 @@ class ExamModel extends Model
         //返回分数
         $point = $dan_arr_isOk['num']*2.5+$check_arr_isOk['num']*2.5+$pan_arr_isOk['num']*2.5;
         unset($dan_arr_isOk['num'], $check_arr_isOk['num'], $pan_arr_isOk['num']);
-
         $arr = array();
         $arr = array_merge($dan_arr_isOk, $check_arr_isOk, $pan_arr_isOk);
         
@@ -146,13 +147,9 @@ class ExamModel extends Model
         $u_id = Session::get('u_id');
         $jsonFile = file_get_contents('test\student'.$u_id.'.php');
         $arrFile = json_decode($jsonFile, true);
-
+        unlink('test\student'.$u_id.'.php');
         //判断每道答题是否正确
-        // print_r($arrCommit);die;
-        // if (is_array($arrCommit)){
-            // print_r($arrCommit);die;
         ksort($arrCommit);
-        // }
         foreach ($arrFile as $keyFile => $valFile) {
             foreach ($arrCommit as $keyCommit => $valCommit) {
                 if ($valFile['qid'] == $keyCommit) {
@@ -177,7 +174,7 @@ class ExamModel extends Model
                 }
             }
         }
-
+        // print_r($arrFile);die;
         //对正确答案进行排序
         foreach ($arrFile as $keyFiles => $valFiles) {
             if ($valFiles['tid'] == 0) {
@@ -211,7 +208,7 @@ class ExamModel extends Model
             }   
         }
 
-
+        // print_r($arrFile);die;
         //生成静态页面
         $history =  view('home.history')->with('arr', $arrFile)->__toString();
 
@@ -227,10 +224,18 @@ class ExamModel extends Model
             'his_name' => Session::get('em_name'),
             'point' => $point,
             'addtime' => time(),
-            'ali_url' => $filename
+            'ali_url' => $filename,
+            'lid' => Session::get('lid')
         );
 
         $res = DB::table('history')->insert($data);
+        if ($res){
+            $arr = array();
+            $arr['stu_id'] = Session::get('u_id');
+            $arr['em_id'] = Session::get('em_id');
+            // print_r($arr);die;
+            DB::table('students_exam')->insert($arr);
+        }
 
         //将考试状态改变
         if ($res){

@@ -107,6 +107,7 @@
           <center>
            <table id="sample-table-1" class="table table-striped table-bordered table-hover">
                         <thead>
+                        
                           <tr>
                             <th class="center">
                               <label>

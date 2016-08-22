@@ -104,7 +104,7 @@
          <div class="col-xs-12">
           <div class="table-responsive">
 
-          <<form action="student_pro" method="post" enctype="multipart/form-data">
+          <form name="form1" action="student_pro" method="post" enctype="multipart/form-data" onsubmit="return submits()">
           <center>
            <table id="sample-table-1" class="table table-striped table-bordered table-hover"> 
             <tr>
@@ -116,20 +116,39 @@
             <tr>
               <td align="center">学生名称</td>
               <td>
-                  <input type="text" name="stu_name" id="stu_name">
+                  <input type="text" name="stu_name" placeholder="学生姓名长度1~12个字符" id="stu_name" onblur="checkna()" required/>
+                  <span class="tips" id="divname"></span>
               </td>
             </tr>
             <tr>
-              <td align="center">学生班级</td>
+              <td align="center">密码</td>
               <td>
-                  <select name="c_id" id="">
+                 <input type="password" name="stu_pwd" placeholder="密码必须由字母和数字组成" id="stu_pwd" onblur="checkpsd1()" required/> 
+                 <span class="tips" id="divpassword1"></span>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">邮箱</td>
+              <td>
+                  <input type="text" name="stu_email" placeholder="请输入邮箱" id="stu_email" onblur="checkmail()" required/>
+                  <span class="tips" id="divmail"></span>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">学生专业</td>
+              <td>
+                  <select name="lid" id="">
                     <option value="请选择">请选择...</option>
                     @foreach($arr as $v)
-                    <option value="{{$v['c_id']}}">
+                    <option value="{{$v['lid']}}">
                       @if( $v['level']  == 0)
-                      {{ $v['c_name'] }}
+                      {{ $v['lname'] }}
+                      @elseif($v['level'] == 1)
+                      ||--{{ $v['lname'] }}
+                      @elseif($v['level'] == 2)
+                      ||----{{ $v['lname'] }}
                       @else
-                      ||--{{ $v['c_name'] }}
+                      ||------{{ $v['lname'] }}
                       @endif
                     </option>
                     @endforeach
@@ -138,19 +157,6 @@
                   
               </td>
             </tr>
-            <tr>
-              <td align="center">密码</td>
-              <td>
-                 <input type="password" name="stu_pwd" id="stu_pwd"> 
-              </td>
-            </tr>
-            <tr>
-              <td align="center">邮箱</td>
-              <td>
-                  <input type="text" name="stu_email" id="stu_email">
-              </td>
-            </tr>
-            
 
             <tr>
               <td align="center">图片</td>
@@ -338,6 +344,88 @@
 </html>
 <script src="jquery.js"></script>
 <script type="text/javascript">
-     
- </script>
+    /**
+     * 学生姓名验证
+     * @author jnn <15210121352@163.com>
+     * @version 0.1
+     */
+    function checkna(){
+      na=form1.stu_name.value;
+        if( na.length <1 || na.length >12)  
+        {   
+            divname.innerHTML="<font class='tips_false' color='darkred'>长度1~12个字符</font>";
+            return false;  
+        }else{  
+            divname.innerHTML='<font class="tips_true">输入正确</font>';
+            return true;
+           
+        }  
+    } 
+    /**
+     * 学生密码验证
+     * @author jnn <15210121352@163.com>
+     * @version 0.1
+     */
+    function checkpsd1(){    
+      psd1=form1.stu_pwd.value;  
+      var flagZM=false ;
+      var flagSZ=false ; 
+      var flagQT=false ;
+      if(psd1.length<6 || psd1.length>12){   
+        divpassword1.innerHTML='<font class="tips_false" color="darkred">长度错误</font>';
+        return false;
+      }else
+        {   
+          for(i=0;i < psd1.length;i++)   
+          {    
+            if((psd1.charAt(i) >= 'A' && psd1.charAt(i)<='Z') || (psd1.charAt(i)>='a' && psd1.charAt(i)<='z')) 
+            {   
+              flagZM=true;
+            }
+            else if(psd1.charAt(i)>='0' && psd1.charAt(i)<='9')    
+            { 
+              flagSZ=true;
+            }else    
+            { 
+              flagQT=true;
+            }   
+          }   
+          if(!flagZM||!flagSZ||flagQT){
+          divpassword1.innerHTML='<font class="tips_false" color="darkred">密码必须是字母数字的组合</font>'; 
+            return false;
+           
+          }else{
+            
+          divpassword1.innerHTML='<font class="tips_true" color="darkred">输入正确</font>';
+           return true;
+          }  
+         
+        } 
+    }
+    /**
+     * 学生邮箱验证
+     * @author jnn <15210121352@163.com>
+     * @version 0.1
+     */
+    function checkmail(){
+          apos=form1.stu_email.value.indexOf("@");
+          dotpos=form1.stu_email.value.lastIndexOf(".");
+          if (apos<1||dotpos-apos<2) 
+            {
+              divmail.innerHTML='<font class="tips_false" color="darkred">输入错误</font>' ;
+              return false;
+            }
+          else {
+            divmail.innerHTML='<font class="tips_true" color="darkred">输入正确</font>' ;
+            return true;
+          }
+    }  
+    function submits(){
+        if(checkna()&&checkpsd1()&&checkmail()){
+          return true;
+        }else{
+          return false;
+        }
+    }  
+</script>
 

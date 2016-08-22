@@ -33,6 +33,7 @@ class LoginsController extends Controller{
 			if($users){
 				Session::put('username',$data['stu_name']);
 				Session::put('u_id',$users['stu_id']);
+				Session::put('lid',$users['lid']);
 				Session::save();
 				//$username = Session::get('username');
 				echo 1;die;
@@ -49,7 +50,7 @@ class LoginsController extends Controller{
 	public function logout()
 	{
 		Session::flush();
-		echo "<script>alert('退出成功');location.href='/';</script>";
+		echo "<script>alert('退出成功');location.href='".url('/')."';</script>";
 	}
 
 }

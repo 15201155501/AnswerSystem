@@ -22,7 +22,7 @@ class StudentController extends Controller
 	{
 		$model=new \App\ClassModel();
         $class_data = $model->lst();
-        //print_r($class_data);die;
+        // print_r($class_data);die;
         return view('admin/student_add')->with('arr',$class_data);
 	}
 
@@ -79,8 +79,8 @@ class StudentController extends Controller
 	public function student_list()
 	{
 		$sc_data=DB::table('students')
-		->join('class','students.c_id','=','class.c_id')
-		->simplePaginate(10);
+		->join('label','students.lid','=','label.lid')
+		->Paginate(10);
 		//print_r($sc_data);die;
         return view('admin/student_list')->with('arr',$sc_data);
 	}

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>前台首页</title>
+    <title>答题系统</title>
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,27 +81,29 @@
     @include('Home/header')
     
     @include('Home/lefts')
+    <div class="snow-container"></div>
+
     <div class="content">
       <ul id="demo">
         <li class="active">
-          <a href="http://sc.chinaz.com/jiaoben/"><img src="Home/images/1.jpg"  /></a>
-          <div><a href="http://sc.chinaz.com/jiaoben/">标题1</a></div>
+          <a href="examList"><img src="Home/images/1.jpg"  /></a>
+          <div><a href="examList">你敢戳我吗</a></div>
         </li>
         <li>
-          <a href="http://sc.chinaz.com/jiaoben/"><img src="Home/images/2.jpg"  /></a>
-          <div><a href="http://sc.chinaz.com/jiaoben/">标题2</a></div>
+          <a href="javascript:void(0);"><img src="Home/images/2.jpg"  /></a>
+          <div><a href="javascript:void(0);">锄禾日当午</a></div>
         </li>
         <li>
-          <a href="http://sc.chinaz.com/jiaoben/"><img src="Home/images/3.jpg"  /></a>
-          <div><a href="http://sc.chinaz.com/jiaoben/">标题3</a></div>
+          <a href="javascript:void(0);"><img src="Home/images/3.jpg"  /></a>
+          <div><a href="javascript:void(0);">宝塔镇河妖</a></div>
         </li>
         <li>
-          <a href="http://sc.chinaz.com/jiaoben/"><img src="Home/images/4.jpg"  /></a>
-          <div><a href="http://sc.chinaz.com/jiaoben/">标题4</a></div>
+          <a href="javascript:void(0);"><img src="Home/images/4.jpg"  /></a>
+          <div><a href="javascript:void(0);">静倚半山雪</a></div>
         </li>
         <li>
-          <a href="http://sc.chinaz.com/jiaoben/"><img src="Home/images/5.jpg"  /></a>
-          <div><a href="http://sc.chinaz.com/jiaoben/">标题5</a></div>
+          <a href="javascript:void(0);"><img src="Home/images/5.jpg"  /></a>
+          <div><a href="javascript:void(0);">独钓一江秋</a></div>
         </li>
       </ul>
 </div>
@@ -112,7 +114,9 @@
     </div>
     
 
-
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://itbyc.com/templets/yang/js/snow.js"></script>
+    <style type="text/css">.snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}</style>
     <script src="Home/lib/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="Home/lib/jquery.indexSlidePattern.js"></script>
     <script type="text/javascript">

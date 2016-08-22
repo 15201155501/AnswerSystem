@@ -111,9 +111,13 @@
               <td align="center">试卷名称</td>
               <td>
                 <select class="" name="em_id">
-                    @foreach($data['em_name'] as $v)
+                @if(empty($data['em_name']))
+                  <option value="">去添加一些试卷吧</option>
+                @else
+                   @foreach($data['em_name'] as $v)
                         <option value="{{$v['em_id']}}">{{ $v['em_name'] }}</option>
                     @endforeach
+                @endif
                 </select>
               </td>
             </tr>
@@ -126,15 +130,12 @@
                         <option value="{{ $v['lid'] }}">{{ $v['lname'] }}</option>
                     @endforeach
                 </select>学院
-                <select class=""  id="zhuan" disabled >
+                <select class="" id="zhuan" disabled >
                     <option value="-1">--请选择--</option>
                 </select>专业
-                <select class="" id="jie" disabled>
+                <select class="" name="lid" id="jie" disabled>
                     <option value="-1">--请选择--</option>
                 </select>阶段
-                <select class="" name="lid" id="ban" disabled>
-                    <option value="-1">--请选择--</option>
-                </select>班级
               </td>
             </tr>
             <tr>
@@ -325,7 +326,7 @@
 <script src="jquery.js"></script>
 <script type="text/javascript">
 $(function(){
-        $("#xue,#zhuan,#jie").change(function(){
+        $("#xue,#zhuan").change(function(){
             var id = $(this).attr('id');
             //alert(id);
             var pid = $(this).val();
@@ -338,12 +339,8 @@ $(function(){
                 if(id == 'xue'){
                     $("#zhuan").html(html).removeAttr('disabled');
                     $("#jie").attr('disabled','disabled').html(html);
-                    $("#ban").attr('disabled','disabled').html(html);
-                }else if(id == 'zhuan'){
-                    $("#jie").html(html).removeAttr('disabled');
-                    $("#ban").attr('disabled','disabled').html(html);
                 }else{
-                    $("#ban").html(html).removeAttr('disabled');
+                    $("#jie").html(html).removeAttr('disabled');
                 }
             });
         });

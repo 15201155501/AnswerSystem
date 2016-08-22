@@ -47,7 +47,8 @@
 	 */
 	Route::get('login','Admin\LoginController@index');//登陆
 	Route::get('login_submit','Admin\LoginController@login_submit');
-	Route::get('qqlogin','Admin\LoginController@qqlogin');//qq登陆
+	Route::get('loginout','Admin\LoginController@loginout');//退出
+	
 
 //后台路由组
 Route::group(['middleware'=>'Permission'],function(){
@@ -86,10 +87,6 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::post('student_pro','Admin\StudentController@student_pro');
 	Route::get('stu_excel','Admin\ExcelController@import');//批量添加
 	Route::get('student_list','Admin\StudentController@student_list');//学生列表
-
-	Route::get('class_add','Admin\ClassController@index');//班级添加
-	Route::get('select_class','Admin\ClassController@select_class');
-	Route::get('class_list','Admin\ClassController@class_list');//班级列表
 	
 	Route::get('exam_pri_add','Admin\ExamPriController@index');//试卷权限添加
 
@@ -104,6 +101,5 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::get('test_del','Admin\TestController@test_del');
 	Route::get('generate_testPro','Admin\TestController@generate_testPro');//生成试卷
 
-	
+	Route::get('historyList','Admin\HistoryController@lists');//成绩查看
 });
-	
