@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\ExamModel;
 use Request,Session,DB;
-
+header('content-type:text/html;charset=utf-8');
 class ExamController extends Controller
 {
     /**
