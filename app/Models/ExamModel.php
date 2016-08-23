@@ -147,9 +147,10 @@ class ExamModel extends Model
         $u_id = Session::get('u_id');
         $jsonFile = file_get_contents('test\student'.$u_id.'.php');
         $arrFile = json_decode($jsonFile, true);
-        unlink('test\student'.$u_id.'.php');
         //判断每道答题是否正确
-        ksort($arrCommit);
+        if (!empty($arrCommit)) {
+            ksort($arrCommit);
+        
         foreach ($arrFile as $keyFile => $valFile) {
             foreach ($arrCommit as $keyCommit => $valCommit) {
                 if ($valFile['qid'] == $keyCommit) {
@@ -174,6 +175,7 @@ class ExamModel extends Model
                 }
             }
         }
+        
         // print_r($arrFile);die;
         //对正确答案进行排序
         foreach ($arrFile as $keyFiles => $valFiles) {
@@ -192,7 +194,6 @@ class ExamModel extends Model
                         if ($valAns == $keyOp) {
                             $str = substr($valOp,0,1);
                             $arrAnswer[$keyAns] = $str;
-                            
                         }
                     }
                 }
@@ -207,7 +208,7 @@ class ExamModel extends Model
                 }
             }   
         }
-
+        }
         // print_r($arrFile);die;
         //生成静态页面
         $history =  view('home.history')->with('arr', $arrFile)->__toString();
@@ -245,6 +246,7 @@ class ExamModel extends Model
             DB::table('students_exam')->insert($ar);
         }
 
+        unlink('test\student'.$u_id.'.php');
         return $point;
     }
 

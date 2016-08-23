@@ -4,7 +4,7 @@
 	<title>考试系统</title>
 	<meta charset=utf-8>
 </head>
-<body>
+<body onload="RunOnBeforeUnload()">
 <center><h1>开始考试</h1></center>
 <form id="myForm">
 <ol>
@@ -119,13 +119,22 @@
 			location.href='examList';
 		});
 	}
-	//禁止用F5键
 	document.onkeydown = function(event){
 		if(event.keyCode == '116'){
 			event.keyCode = 0;
 		    event.cancelBubble = true;
 		    return false;
 		}
+		if   (event.keyCode==13)   
+		{   
+			event.keyCode=0;
+			event.returnValue = false;
+			alert("hhaha");
+			window.onbeforeunload = function(){ 
+			return '将丢失未保存的数据!'; 
+			}
+			// return false;
+		} 
 	}
 </script>
 
