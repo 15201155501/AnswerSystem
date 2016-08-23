@@ -30,6 +30,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'Permission' => \App\Http\Middleware\Permission::class,
-        'Oauth' => \App\Http\Controllers\Admin\qqlogin\qqConnectAPI::class
+        'checkstu' => \App\Http\Middleware\checkstu::class,
     ];
 }

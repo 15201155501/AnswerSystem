@@ -25,7 +25,7 @@
 	Route::get('logout','Home\LoginsController@logout');//登陆-验证
 	
 	//前台路由组
-	Route::group(["prefix" => "/"], function() {
+	Route::group(['middleware' => 'checkstu'], function() {
 		Route::get('index','Home\HomeController@index');//前台首页
 
 		//开始考试
@@ -103,4 +103,3 @@ Route::group(['middleware'=>'Permission'],function(){
 
 	Route::get('historyList','Admin\HistoryController@lists');//成绩查看
 });
-	
