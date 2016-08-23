@@ -30,12 +30,21 @@ class ExamModel extends Model
         $info = DB::table('students')->select('lid')->where('stu_id',$stu_id)->first();
 
         $lid = $info['lid'];
+// <<<<<<< HEAD
+        // echo $lid;die;
+        // $em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
+        // print_r($em_major);die;
+        // echo $em_major['pid'];die;
+        // $exam = DB::table('exam')->where('em_major',$em_major['pid'])->get();
+        
+// =======
         //echo $lid;die;
         //$em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
         //print_r($em_major);die;
         //echo $em_major['pid'];die;
         $exam = DB::table('exam')->where('em_major',$lid)->get();
 
+// >>>>>>> master
         return $exam;
     }
     
@@ -147,9 +156,10 @@ class ExamModel extends Model
         $u_id = Session::get('u_id');
         $jsonFile = file_get_contents('test\student'.$u_id.'.php');
         $arrFile = json_decode($jsonFile, true);
-        unlink('test\student'.$u_id.'.php');
         //判断每道答题是否正确
-        ksort($arrCommit);
+        if (!empty($arrCommit)) {
+            ksort($arrCommit);
+        
         foreach ($arrFile as $keyFile => $valFile) {
             foreach ($arrCommit as $keyCommit => $valCommit) {
                 if ($valFile['qid'] == $keyCommit) {
@@ -174,6 +184,7 @@ class ExamModel extends Model
                 }
             }
         }
+        
         // print_r($arrFile);die;
         //对正确答案进行排序
         foreach ($arrFile as $keyFiles => $valFiles) {
@@ -192,7 +203,6 @@ class ExamModel extends Model
                         if ($valAns == $keyOp) {
                             $str = substr($valOp,0,1);
                             $arrAnswer[$keyAns] = $str;
-                            
                         }
                     }
                 }
@@ -207,7 +217,7 @@ class ExamModel extends Model
                 }
             }   
         }
-
+        }
         // print_r($arrFile);die;
         //生成静态页面
         $history =  view('home.history')->with('arr', $arrFile)->__toString();
@@ -245,6 +255,7 @@ class ExamModel extends Model
             DB::table('students_exam')->insert($ar);
         }
 
+        unlink('test\student'.$u_id.'.php');
         return $point;
     }
 

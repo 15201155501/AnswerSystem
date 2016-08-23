@@ -15,6 +15,7 @@ class TestController extends Controller{
     public function generate_add()
     {
         $xue_data = DB::table('label')->where('pid',0)->get();
+        // print_r($xue_data);die;
         return view('admin/generate_add')->with('xue_data',$xue_data);
     }
     //检测试卷名是否唯一
