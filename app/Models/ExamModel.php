@@ -30,21 +30,12 @@ class ExamModel extends Model
         $info = DB::table('students')->select('lid')->where('stu_id',$stu_id)->first();
 
         $lid = $info['lid'];
-// <<<<<<< HEAD
-        // echo $lid;die;
-        // $em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
-        // print_r($em_major);die;
-        // echo $em_major['pid'];die;
-        // $exam = DB::table('exam')->where('em_major',$em_major['pid'])->get();
-        
-// =======
         //echo $lid;die;
         //$em_major = DB::table('label')->select('pid')->where('lid',$lid)->first();
         //print_r($em_major);die;
         //echo $em_major['pid'];die;
-        $exam = DB::table('exam')->where('em_major',$lid)->get();
-
-// >>>>>>> master
+        $exam = DB::table('exam')->where('em_major',$lid)->orderBy('start_time','desc')->get();
+        
         return $exam;
     }
     
