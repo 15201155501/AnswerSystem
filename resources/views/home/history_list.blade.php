@@ -81,7 +81,7 @@
       <tbody>
         @foreach($arr as $v)
             <tr>
-                <td>测试数据</td>
+                <td>{{ $v['his_name'] }}</td>
 
                 <td>{{date('Y-n-d H:i:s',$v['addtime'])}}</td>
 
