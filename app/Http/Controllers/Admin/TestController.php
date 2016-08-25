@@ -15,6 +15,7 @@ class TestController extends Controller{
     public function generate_add()
     {
         $xue_data = DB::table('label')->where('pid',0)->get();
+        // print_r($xue_data);die;
         return view('admin/generate_add')->with('xue_data',$xue_data);
     }
     //检测试卷名是否唯一
@@ -69,7 +70,7 @@ class TestController extends Controller{
     public function generate_testAdd()
     {
         $data['xue_data'] = DB::table('label')->where('pid',0)->get();
-        $data['em_name'] = DB::table('exam')->where('em_info','!=','')->get();
+        $data['em_name'] = DB::table('exam')->where('em_info','=',null)->get();
         //print_r($data['em_name']);die;
         return view('admin/generate_testAdd')->with('data',$data);
     }
