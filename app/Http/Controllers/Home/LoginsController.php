@@ -31,7 +31,7 @@ class LoginsController extends Controller{
 		$users = DB::table('students')->where($data)->first();
 			//进行非逻辑判断
 			if($users){
-				Session::put('username',$users['stu_realname']);
+				Session::put('username',$users['stu_name']);
 				Session::put('u_id',$users['stu_id']);
 				Session::put('lid',$users['lid']);
 				Session::save();
