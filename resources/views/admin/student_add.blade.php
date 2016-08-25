@@ -116,7 +116,7 @@
             <tr>
               <td align="center">真实姓名</td>
               <td>
-                  <input type="text" name="stu_realname" placeholder="学生姓名长度1~12个字符" id="stu_name" onblur="checkna()" required/>
+                  <input type="text" name="stu_name" placeholder="学生姓名长度1~12个字符" id="stu_name" onblur="checkna()" required/>
                   <span class="tips" id="divname"></span>
               </td>
             </tr>
