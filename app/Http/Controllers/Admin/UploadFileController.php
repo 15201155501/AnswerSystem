@@ -33,7 +33,7 @@ class UploadFileController extends Controller
 		    	//获取Excel内容转换成数组
 		        $data = $reader->all();
 		        // dd($data);
-		        $arr_all = json_decode($data, true);
+		        $arr_all = json_decode($data, true);		        
 		        // dd($arr_all);
 		        //当前时间
 		        date_default_timezone_set('prc');
@@ -45,6 +45,12 @@ class UploadFileController extends Controller
 		        $qidFQuestions = $questions->lastQid();
 		        // dd($qidFQuestions);
 		        foreach ($arr_all as $key_all => $val_all) {
+		        	if ($val_all['tid'] != '0' ) {
+		        		if ($val_all['tid'] == null) {
+		        			unset($arr_all[$key_all]);
+		        			continue;
+		        		}
+		        	}
 		        	$qidFQuestions ++;
 		        	$arr_add[$num]['tid'] = $val_all['tid'];						//题型类型
 		        	$arr_add[$num]['answer'] = $val_all['answer'];	
@@ -58,7 +64,8 @@ class UploadFileController extends Controller
 	        		$num ++;
 		        	$arr_createFile[$val_all['tid']][$qidFQuestions] = $val_all;
 		        }
-		        dd($arr_createFile);
+		        // dd($arr_add);
+		        // dd($arr_createFile);
 		        $questions->add($arr_add);
 		        // print_r(DB::table('questions_label')->insert($arr_questionsLabel));die;
 		        foreach ($arr_createFile as $key_createFile => $val_createFile) {
