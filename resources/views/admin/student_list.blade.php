@@ -115,7 +115,8 @@
                               </label>
                             </th>
                             <th>学生ID</th>
-                            <th>学生名称</th>
+                            <th>真实姓名</th>
+                            <th>学生账号</th>
                             <th>学生密码</th>
                             <th>学生邮箱</th>
                             <th>学生头像</th>
@@ -139,7 +140,8 @@
                             <td>
                               <a href="#">{{$v['stu_id']}}</a>
                             </td>
-                            <td>{{$v['stu_name']}}</td>
+                            <td>{{$v['stu_realname']}}</td>
+                            <td>{{$v['stu_username']}}</td>
                             <td>{{$v['stu_pwd']}}</td>
                             <td>{{$v['stu_email']}}</td>
                             <td><img src="{{$v['stu_img']}}" alt="" width="40px" height="40px"></td>

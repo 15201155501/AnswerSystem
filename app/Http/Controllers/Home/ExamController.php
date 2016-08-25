@@ -112,12 +112,26 @@ class ExamController extends Controller
         //接收请求数据
         $id = Request::get('id');
 
-        $arr = DB::table('history')->where('his_id',$id)->first();
+        $arr = DB::table('history')
+        ->join('exam','history.his_name','=','exam.em_name')
+        ->where('his_id',$id)->first();
+        //处理时间戳
+        $nowtime = time();
+        $end_time = strtotime($arr['end_time']);
+        //判断是否在考试时间内
+        if ($nowtime<$end_time){
+            echo "<script>alert('考试还未结束，不能查看历史试卷');location.href='examList';</script>";
+            exit();
+        }
 
         //获取文件地址
         $url = $arr['history_url'];
-
-        //查看试卷
-        echo file_get_contents($url);
+        if($url){
+            //查看试卷
+            echo file_get_contents($url);
+        }else{
+            //查看试卷
+            echo file_get_contents($arr['ali_url']);
+        }
     }
 }

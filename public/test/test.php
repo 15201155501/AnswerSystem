@@ -3,6 +3,12 @@
 <head>
 	<title>考试系统</title>
 	<meta charset=utf-8>
+	<style>
+		body{background:url(Home/images/extra_clean_paper.png);}
+		.actGotop{position:fixed; _position:absolute; bottom:100px; right:50px; width:150px; height:195px; display:none;}
+		.actGotop a,.actGotop a:link{width:150px; height:195px; display:inline-block; background:url(Home/images/blog7year_gotop.png) no-repeat; _background:url(images/blog7year_gotop.gif) no-repeat; outline:none;}
+		.actGotop a:hover{width:150px; height:195px; background:url(Home/images/blog7year_gotopd.gif) no-repeat; outline:none;}
+	</style>
 </head>
 <body onload="RunOnBeforeUnload()">
 <center><h1>开始考试</h1></center>
@@ -48,10 +54,22 @@
 	<?php } }?>
 </ol>
 </form>
-<?php echo date('Y-m-d H:i:s');?>
+<div class="actGotop"><a href="javascript:;" title="Top"></a></div>
 <center><button id="dosubmit"><font  style="font-size:30px;">提交试卷</font></button>&nbsp;<button id="checkcookie"><font  style="font-size:30px;">检测登陆</font></button></center>
 </body>
 <script src="Home/lib/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(window).scroll(function() {
+			if($(window).scrollTop() >= 100){
+				$('.actGotop').fadeIn(300);
+			}else{
+				$('.actGotop').fadeOut(300);
+			}
+		});
+		$('.actGotop').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+	});
+</script>
 <script>
 	$("#checkcookie").click(function () {
 		var cookie = <?php echo Session::get('u_id') ?>;

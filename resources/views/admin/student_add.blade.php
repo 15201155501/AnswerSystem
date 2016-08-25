@@ -114,10 +114,17 @@
               </td>
             </tr>
             <tr>
-              <td align="center">学生名称</td>
+              <td align="center">真实姓名</td>
               <td>
                   <input type="text" name="stu_name" placeholder="学生姓名长度1~12个字符" id="stu_name" onblur="checkna()" required/>
                   <span class="tips" id="divname"></span>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">学生账号</td>
+              <td>
+                  <input type="text" name="stu_username" placeholder="学生账号为英文数字6位以上" id="stu_username" onblur="checkonly()" required/>
+                  <span class="tips" id="divusername"></span>
               </td>
             </tr>
             <tr>
@@ -361,6 +368,21 @@
            
         }  
     } 
+    function checkonly()
+    {
+      var i = '';
+      var stu_username = $("#stu_username").val();
+      $.get('checkonly',{'stu_username':stu_username},function(e){
+        if(e == 1){
+            $("#divusername").html('<font class="tips_true">输入正确</font>');
+            i = true;
+          }else{
+            $("#divusername").html("<font class='tips_false' color='darkred'>用户名已存在，换一个吧。</font>");
+            i = false;
+          }
+      });
+      return i;
+    }
     /**
      * 学生密码验证
      * @author jnn <15210121352@163.com>
@@ -421,7 +443,7 @@
           }
     }  
     function submits(){
-        if(checkna()&&checkpsd1()&&checkmail()){
+        if(checkna()&&checkpsd1()&&checkmail()&&checkonly()){
           return true;
         }else{
           return false;
