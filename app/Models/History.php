@@ -14,6 +14,7 @@ class History extends Model
 		$size = DB::table('history')->count();
 		$num = 20;
 		$page_size = ceil($size/$num = 20);
+		$page_size = ceil($size/$num);
 		$page = Request::input('page') ? Request::input('page') : 1;
 		$arr_page['prev'] = $page-1<1 ? 1 : $page-1;
 		$arr_page['next'] = $page+1>$page_size ? $page_size : $page+1;

@@ -41,7 +41,7 @@
                         </tbody>
                       </table>
                       <div id="mark">
-                        <div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>
+                      <div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>
                         <div class="tabs"> 这里是要弹出来的内容！<br />
                         </div>
                       </div>
@@ -51,9 +51,5 @@
                           <button class="btn btn-primary" onclick="funPage({{$arr['prev']}})">上一页</button>&nbsp;
                           <button class="btn btn-primary" onclick="funPage({{$arr['next']}})">下一页</button>&nbsp;
                           <button class="btn btn-primary" onclick="funPage({{$arr['last']}})">尾页</button>&nbsp;
-                          <!-- <td><a href="{{url('historyList')}}?page=1">首页</a>
-                          <a href="{{url('historyList')}}?page={{$arr['prev']}}">上一页</a>
-                          <a href="{{url('historyList')}}?page={{$arr['next']}}">下一页</a>
-                          <a href="{{url('historyList')}}?page={{$arr['last']}}">尾页</a></td> -->
                         </tr>
                       </table>
