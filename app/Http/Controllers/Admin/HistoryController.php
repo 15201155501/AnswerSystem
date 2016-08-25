@@ -7,8 +7,8 @@ use DB, Redirect, Input, Response, Request,Session;
 use App\Http\Controllers\Controller;
 use App\Models\History;
 use App\Models\Student;
-use App\Models\Label;
-use App\Models\Lib;
+use App\Models\label;
+use App\Models\lib;
 
 class HistoryController extends Controller
 {

@@ -18,18 +18,19 @@
 	/**
 	 * 前台路由
 	 */
+	Route::get('/aaaa','Home\AController@index');
 	Route::get('QQlogin','Home\OAuthController@QQlogin');//QQ登录
 	Route::get('OAuthQQ','Home\OAuthController@OAuthQQ');//登陆-
 	Route::get('/','Home\LoginsController@index');//登陆
 	Route::get('login_pro','Home\LoginsController@login_pro');//登陆-验证
 	Route::get('logout','Home\LoginsController@logout');//登陆-验证
 	
-	//前台路由组
+	//前台路由�?
 	Route::group(['middleware' => 'checkstu'], function() {
 		Route::get('index','Home\HomeController@index');//前台首页
 
 		//开始考试
-		Route::get('examList','Home\ExamController@examList');//开始考试-列表页
+		Route::get('examList','Home\ExamController@examList');//开始考试-列表�?
 		Route::get('startExam','Home\ExamController@startExam');//开始考试-进行考试
 		Route::get('checkExam','Home\ExamController@checkExam');//开始考试-进行考试
 		
@@ -47,10 +48,10 @@
 	 */
 	Route::get('login','Admin\LoginController@index');//登陆
 	Route::get('login_submit','Admin\LoginController@login_submit');
-	Route::get('loginout','Admin\LoginController@loginout');//退出
+	Route::get('loginout','Admin\LoginController@loginout');//退�?
 	
 
-//后台路由组
+//后台路由�?
 Route::group(['middleware'=>'Permission'],function(){
 
 	//后台
@@ -65,7 +66,7 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::match(['get', 'post'], 'label','Admin\LabelController@index');//标签添加
 	Route::match(['get', 'post'], 'listLabel','Admin\LabelController@listLabel');//标签管理
 
-	Route::get('owner_add','Admin\OwnerController@index');//管理员添加
+	Route::get('owner_add','Admin\OwnerController@index');//管理员添�?
 	Route::post('owner_pro','Admin\OwnerController@owner_pro');
 	Route::get('owner_list','Admin\OwnerController@owner_list');//列表
 	Route::get('owner_del','Admin\OwnerController@owner_del');//删除
@@ -91,7 +92,7 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::get('exam_pri_add','Admin\ExamPriController@index');//试卷权限添加
 
 	Route::get('generate_add','Admin\TestController@generate_add');//添加考题
-	Route::get('select','Admin\TestController@select');//无限极分类
+	Route::get('select','Admin\TestController@select');//无限极分�?
 	Route::get('check_test','Admin\TestController@check_test');
 	Route::post('generate_addPro','Admin\TestController@generate_addPro');
 	Route::post('generate_test','Admin\TestController@generate_test');//生成试卷

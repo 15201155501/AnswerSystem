@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 use DB, Redirect, Input, Response, Request, Session, DateTime, Excel;
 use App\Http\Controllers\Controller;
 use App\Models\lib;
-use App\Models\Label;
-use App\Models\Questions;
+use App\Models\label;
+use App\Models\questions;
 use JohnLui\AliyunOSS\AliyunOSS;
 header('content_type:text/html;charset=utf8');
 class UploadFileController extends Controller

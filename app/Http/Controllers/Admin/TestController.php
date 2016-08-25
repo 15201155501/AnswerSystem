@@ -28,7 +28,7 @@ class TestController extends Controller{
             echo 0;
         }
     }
-    //无限极分类
+    //无限极分?
     public function select()
     {
         $id = Request::get('pid');
@@ -70,7 +70,7 @@ class TestController extends Controller{
     public function generate_testAdd()
     {
         $data['xue_data'] = DB::table('label')->where('pid',0)->get();
-        $data['em_name'] = DB::table('exam')->where('em_info','!=','')->get();
+        $data['em_name'] = DB::table('exam')->where('em_info','=',null)->get();
         //print_r($data['em_name']);die;
         return view('admin/generate_testAdd')->with('data',$data);
     }
@@ -91,17 +91,17 @@ class TestController extends Controller{
             $dan_num = 20;
             $duo_num = 10;
             $pan_num = 10;
-            $test_str = '单选题：20（道），多选题：10（道），判断题：10（道）';
+            $test_str = '单选题: 20（道），多选题: 10（道），判断题：10（道)';
         }else if($test_data['test_str'] == 1){
         	$dan_num = 18;
             $duo_num = 12;
             $pan_num = 10;
-            $test_str = '单选题：18（道），多选题：12（道），判断题：10（道）';
+            $test_str = '单选题: 18（道），多选题: 12（道），判断题：10（道)';
         }else{
         	$dan_num = 15;
             $duo_num = 15;
             $pan_num = 10;
-            $test_str = '单选题：15（道），多选题：15（道），判断题：10（道）';
+            $test_str = '单选题: 15（道），多选题: 15（道），判断题：10（道)';
         }
 		$dan = DB::table('questions')->where('tid',0)->get();
 		//print_r($dan);die;
@@ -185,7 +185,7 @@ class TestController extends Controller{
         if($res){
             echo "<script>alert('分配成功');location.href='generate_testAdd';</script>";
         }else{
-            echo "<script>alert('分配失败请重新分配');location.href='generate_testAdd';</script>";
+            echo "<script>alert('分配失败请重新分?);location.href='generate_testAdd';</script>";
         }
 		// ob_start();
 		// include('test/test.php');
@@ -211,12 +211,12 @@ class TestController extends Controller{
 		// 设置 Bucket
 		$oss = $oss->setBucket($bucketName);
 		//var_dump($oss);die;
-		// 上传一个文件（示例文件为 public 目录下的 robots.txt）
-		// 两个参数：资源名称、文件路径
+		// 上传一个文件（示例文件?public 目录下的 robots.txt?
+		// 两个参数：资源名称、文件路?
 		$oss->uploadFile('robots.txt', public_path('robots.txt'));
 		echo 1;die;
-		// 从服务器获取这个资源的 URL 并打印
-		// 两个参数：资源名称、过期时间
+		// 从服务器获取这个资源?URL 并打?
+		// 两个参数：资源名称、过期时?
 		echo $oss->getUrl('robots.txt', new DateTime("+1 day"));
 
 	}

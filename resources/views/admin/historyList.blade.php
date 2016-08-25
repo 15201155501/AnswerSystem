@@ -184,7 +184,7 @@
                         </tbody>
                       </table>
                       <div id="mark">
-                        <div id="closezc"><a href="javascript:void(0)">关闭</a></div>
+                        <div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>
                         <div class="tabs"> 这里是要弹出来的内容！<br />
                         </div>
                       </div>
@@ -481,7 +481,6 @@
     $("#mark").hide();
   }
   $("#closezc a").click(function(){
-    alert(1)
   })
 </script>
   <div style="display:none">

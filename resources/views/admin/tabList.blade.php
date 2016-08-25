@@ -34,12 +34,17 @@
                             <td>{{$v['point']}}</td>
                             <td>{{$v['addtime']}}</td>
                             <td>
-                                <button class="btn disabled">考试详细信息</button>
+                                <button class="btn" class="zc" onclick="zc({{$v['his_id']}})">考试详细信息</button>
                             </td>
                           </tr>
                           @endforeach
                         </tbody>
                       </table>
+                      <div id="mark">
+                        <div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>
+                        <div class="tabs"> 这里是要弹出来的内容！<br />
+                        </div>
+                      </div>
                       <table>
                         <tr>
                           <button class="btn btn-primary" onclick="funPage(1)">首页</button>&nbsp;
