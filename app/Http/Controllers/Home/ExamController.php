@@ -122,11 +122,16 @@ class ExamController extends Controller
         if ($nowtime<$end_time){
             echo "<script>alert('考试还未结束，不能查看历史试卷');location.href='examList';</script>";
             exit();
-        }else{
-            //获取文件地址
-            $url = $arr['history_url'];
+        }
+
+        //获取文件地址
+        $url = $arr['history_url'];
+        if($url){
             //查看试卷
             echo file_get_contents($url);
+        }else{
+            //查看试卷
+            echo file_get_contents($arr['local_url']);
         }
     }
 }
