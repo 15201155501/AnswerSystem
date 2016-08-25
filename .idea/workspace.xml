@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="">
+    <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="修改细节">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php" />
     </list>
     <ignored path="AnswerSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -385,7 +384,7 @@
       <workItem from="1471912430064" duration="1252000" />
       <workItem from="1472026633644" duration="1202000" />
       <workItem from="1472037823791" duration="636000" />
-      <workItem from="1472088823167" duration="7397000" />
+      <workItem from="1472088823167" duration="7412000" />
     </task>
     <task id="LOCAL-00001" summary="修改历史列表文件">
       <created>1471503431684</created>
@@ -471,11 +470,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472106572871</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="修改细节">
+      <created>1472107011351</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1472107011351</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52518000" />
+    <option name="totallyTimeSpent" value="52533000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
