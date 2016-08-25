@@ -87,6 +87,8 @@ Route::group(['middleware'=>'Permission'],function(){
 	Route::post('student_pro','Admin\StudentController@student_pro');
 	Route::get('stu_excel','Admin\ExcelController@import');//批量添加
 	Route::get('student_list','Admin\StudentController@student_list');//学生列表
+	Route::get('checkonly','Admin\StudentController@checkonly');//验证学生账号唯一
+	
 	
 	Route::get('exam_pri_add','Admin\ExamPriController@index');//试卷权限添加
 
