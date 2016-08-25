@@ -52,6 +52,16 @@ class StudentController extends Controller
 		}
 		
 	}
+	public function checkonly()
+	{
+		$stu_username = Request::get('stu_username');
+		$res = DB::table('students')->where('stu_username',$stu_username)->get();
+		if(empty($res)){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
 	/**
 	 * 学生图片上传云端
 	 * @author jnn <15210121352@163.com>
