@@ -131,7 +131,7 @@ class ExamController extends Controller
             echo file_get_contents($url);
         }else{
             //查看试卷
-            echo file_get_contents($arr['local_url']);
+            echo file_get_contents($arr['ali_url']);
         }
     }
 }
