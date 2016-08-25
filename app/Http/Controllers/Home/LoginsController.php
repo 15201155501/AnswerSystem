@@ -25,13 +25,13 @@ class LoginsController extends Controller{
 	public function login_pro()
 	{
 
-		$data['stu_name']=Request::get('username');
+		$data['stu_username']=Request::get('username');
 		$data['stu_pwd']=Request::get('password');
 		//print_r($data);die;
 		$users = DB::table('students')->where($data)->first();
 			//进行非逻辑判断
 			if($users){
-				Session::put('username',$data['stu_name']);
+				Session::put('username',$users['stu_realname']);
 				Session::put('u_id',$users['stu_id']);
 				Session::put('lid',$users['lid']);
 				Session::save();
