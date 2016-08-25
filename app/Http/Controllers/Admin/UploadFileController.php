@@ -58,7 +58,7 @@ class UploadFileController extends Controller
 	        		$num ++;
 		        	$arr_createFile[$val_all['tid']][$qidFQuestions] = $val_all;
 		        }
-		        // dd($arr_createFile);
+		        dd($arr_createFile);
 		        $questions->add($arr_add);
 		        // print_r(DB::table('questions_label')->insert($arr_questionsLabel));die;
 		        foreach ($arr_createFile as $key_createFile => $val_createFile) {

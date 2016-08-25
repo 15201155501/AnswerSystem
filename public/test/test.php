@@ -133,7 +133,6 @@
 			window.onbeforeunload = function(){ 
 			return '将丢失未保存的数据!'; 
 			}
-			// return false;
 		} 
 	}
 </script>

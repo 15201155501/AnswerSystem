@@ -184,7 +184,7 @@
                         </tbody>
                       </table>
                       <div id="mark">
-                        <div id="closezc"><a href="javascript:void(0)">关闭</a></div>
+                      <div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>
                         <div class="tabs"> 这里是要弹出来的内容！<br />
                         </div>
                       </div>
@@ -473,6 +473,7 @@
     var url = "{{url('historyList')}}";
     var data = {his_id:id, act:'mark'};
     $.get(url, data, function(e){
+      console.log(e)
       $("#mark").html("<div id='closezc'><a href='javascript:void(0)' onclick='funClose()'>关闭</a></div>"+e);
     })
   }
@@ -481,7 +482,6 @@
     $("#mark").hide();
   }
   $("#closezc a").click(function(){
-    alert(1)
   })
 </script>
   <div style="display:none">

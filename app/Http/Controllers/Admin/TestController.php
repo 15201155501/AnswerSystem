@@ -70,8 +70,8 @@ class TestController extends Controller{
     public function generate_testAdd()
     {
         $data['xue_data'] = DB::table('label')->where('pid',0)->get();
-        $data['em_name'] = DB::table('exam')->where('em_info','!=','')->get();
-        //print_r($data['em_name']);die;
+        $data['em_name'] = DB::table('exam')->where('em_info','=',null)->get();
+        // print_r($data['em_name']);die;
         return view('admin/generate_testAdd')->with('data',$data);
     }
     public function generate_testList()
