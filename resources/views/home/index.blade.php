@@ -35,9 +35,9 @@
     }
     *{padding:0;margin:0;list-style-type:none;}
     a,img{border:0;}
-    body{font:12px/180% Arial, Helvetica, sans-serif, "新宋�?;}
+    body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
     /* demo */
-    /*五张图片在缩略图时所显示的位置调�?/
+    /*五张图片在缩略图时所显示的位置动*/
     #demo li:nth-of-type(1) img{ transform: translate(-210px);}
     #demo li:nth-of-type(2) img{ transform: translate(-180px);}
     #demo li:nth-of-type(3) img{ transform: translate(-380px);}
@@ -87,15 +87,15 @@
       <ul id="demo">
         <li class="active">
           <a href="examList"><img src="Home/images/1.jpg"  /></a>
-          <div><a href="examList">你敢戳我�?/a></div>
+          <div><a href="examList">你敢戳我吗</a></div>
         </li>
         <li>
           <a href="javascript:void(0);"><img src="Home/images/2.jpg"  /></a>
-          <div><a href="javascript:void(0);">锄禾日�?��?/a></div>
+          <div><a href="javascript:void(0);">坟头倒比馒头大</a></div>
         </li>
         <li>
           <a href="javascript:void(0);"><img src="Home/images/3.jpg"  /></a>
-          <div><a href="javascript:void(0);">宝塔镇河�?/a></div>
+          <div><a href="javascript:void(0);">宝塔镇河妖</a></div>
         </li>
         <li>
           <a href="javascript:void(0);"><img src="Home/images/4.jpg"  /></a>
@@ -128,7 +128,7 @@
     <script language="javascript">
       $(document).ready(function(e){
           var opt = {
-          "speed" : "fast"    , //变换速度,三速度可�?slow,normal,fast;
+          "speed" : "fast"    , //变换速度,三速度可slow,normal,fast;
           "by"  : "mouseover"   , //触发事件,click或者mouseover;
           "auto"  : true    , //是否自动播放;
           "sec" : 3000      //自动播放间隔;

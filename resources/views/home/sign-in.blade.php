@@ -18,6 +18,9 @@
     <!-- Demo page code -->
 
     <style type="text/css">
+        body{
+            background-color: #000;
+        }
         #line-chart {
             height:300px;
             width:800px;
@@ -55,7 +58,7 @@
   <!--[if (gt IE 9)|!(IE)]><!--> 
   <body class=""> 
   <!--<![endif]-->
-    
+
     <div class="navbar">
         <div class="navbar-inner">
                 <ul class="nav pull-right">
@@ -64,22 +67,28 @@
                 <a class="brand" href="index.html"><span class="first">Jiang</span> <span class="second">答题系统</span></a>
         </div>
     </div>
-    
+
         <div class="row-fluid">
-    <div class="dialog">
-        <div class="block">
-            <p class="block-heading">Sign In</p>
-            <div class="block-body">
-                    <label>Username</label>
-                    <input type="text" class="span12" placeholder="Username" required="" id="username">
-                    <label>Password</label>
-                    <input type="password" class="span12" placeholder="Password" required="" id="password">
-                    <button class="btn btn-primary pull-right" id="submit">Sign In</button>
-                    <label class="remember-me"> 使用其他方式登陆 <a href="QQlogin"><img src="Home/images/bt_white_24X24.png" alt=""></a></label>
-                    <div class="clearfix"></div>
+            <div class="container">
+                <div id="particles-js">
+
+                </div>
+                <div class="dialog" style="margin-top: -400px;margin-left:400px;position: absolute;">
+                    <div>
+                        <p><font color="white" size="+2">答题系统</font></p>
+                        <div>
+                            <label></label>
+                            <input type="text" class="span12" required="" id="username">
+                            <label><font color="white">密码</font></label>
+                            <input type="password" class="span12" required="" id="password">
+                            <button class="btn btn-primary pull-right" id="submit">Sign In</button>
+                            <label class="remember-me"> <font color="white">使用其他方式登陆</font> <a href="QQlogin"><img src="Home/images/bt_white_24X24.png" alt=""></a></label>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 </div>
 
 
@@ -111,6 +120,9 @@
     </script>
     
   </body>
+
 </html>
+<script src="Home/lib/bootstrap/js/particles.js"></script>
+<script src="Home/lib/bootstrap/js/app.js"></script>
 
 
