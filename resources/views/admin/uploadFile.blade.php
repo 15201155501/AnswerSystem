@@ -96,8 +96,7 @@
        <h1> 题库上传<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
-  <script src="Admin/assets/jedate/jedate.js"></script>
-  <script src="Admin/assets/jedate/jedate.min.js"></script>
+
       <!-- /.page-header --> 
       <div class="row"> 
        <div class="col-xs-12"> 

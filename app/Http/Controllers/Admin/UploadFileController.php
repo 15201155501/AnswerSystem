@@ -32,8 +32,15 @@ class UploadFileController extends Controller
 		    	// dd(Request::all());
 		    	//获取Excel内容转换成数组
 		        $data = $reader->all();
+		        //获取excel的第几张表
+			    // $reader = $reader->getSheet(0);
+			   
+			    //获取表中的数据
+			    // $arr_all = $reader->toArray();
 		        // dd($data);
+		        
 		        $arr_all = json_decode($data, true);
+		        // unset($arr_all[0]);
 		        // dd($arr_all);
 		        //当前时间
 		        date_default_timezone_set('prc');

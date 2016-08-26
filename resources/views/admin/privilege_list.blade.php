@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>角色列表</title>
+    <title>权限列表</title>
     <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
     <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -79,7 +79,7 @@
           <i class="icon-home home-icon"></i>
           <a href="#">首页</a>
         </li>
-        <li class="active">我的面板》修改密码</li>
+        <li class="active">权限管理》权限列表</li>
       </ul><!-- .breadcrumb -->
 
       <div class="nav-search" id="nav-search">
@@ -93,7 +93,7 @@
     </div>
      <div class="page-content"> 
       <div class="page-header"> 
-       <h1> 邮箱设置<small> <i class="icon-double-angle-right"></i></small> </h1> 
+       <h1> 权限管理<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
 

@@ -174,7 +174,7 @@
             
            
             <tr>
-              <td align="right"><a href="stu_excel"><input type="button" value="批量添加" class="btn"></a></td>
+              <td align="right"><a href="stu_excel"><!-- <input type="button" value="批量添加" class="btn"> --></a></td>
               <td align="left">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <input type="hidden" value="add">

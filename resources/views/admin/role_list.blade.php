@@ -10,6 +10,13 @@
     <link href="Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="Admin/assets/css/font-awesome.min.css" />
 
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="Admin/assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+
+    <!-- page specific plugin styles -->
+
+    <!-- fonts -->
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 
@@ -19,10 +26,22 @@
     <link rel="stylesheet" href="Admin/assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="Admin/assets/css/ace-skins.min.css" />
 
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="Admin/assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
 
     <script src="Admin/assets/js/ace-extra.min.js"></script>
 
-   
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+    <script src="Admin/assets/js/html5shiv.js"></script>
+    <script src="Admin/assets/js/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -60,7 +79,7 @@
           <i class="icon-home home-icon"></i>
           <a href="#">首页</a>
         </li>
-        <li class="active">我的面板》修改密码</li>
+        <li class="active">角色管理》角色列表</li>
       </ul><!-- .breadcrumb -->
 
       <div class="nav-search" id="nav-search">
@@ -74,7 +93,7 @@
     </div>
      <div class="page-content"> 
       <div class="page-header"> 
-       <h1> 邮箱设置<small> <i class="icon-double-angle-right"></i></small> </h1> 
+       <h1> 角色管理<small> <i class="icon-double-angle-right"></i></small> </h1> 
       </div>
 
 
@@ -130,6 +149,7 @@
          </div>
          <!-- /span --> 
         </div>
+      <!-- /.row --> 
      </div>
      <!-- /.page-content --> 
     </div>
@@ -145,7 +165,7 @@
   <script type="text/javascript">
       window.jQuery || document.write("<script src='Admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
     </script> 
-
+  
   <script type="text/javascript">
       if("ontouchend" in document) document.write("<script src='Admin/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
     </script> 
@@ -156,11 +176,11 @@
   <script src="Admin/assets/js/jquery.dataTables.bootstrap.js"></script> 
   <!-- ace scripts --> 
   <script src="Admin/assets/js/ace-elements.min.js"></script> 
- 
+  <script src="Admin/assets/js/ace.min.js"></script> 
   <!-- inline scripts related to this page --> 
-  
+ 
 
-  
+   
   <div style="display:none">
   </div>   
  </body>
