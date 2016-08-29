@@ -77,7 +77,7 @@
                     <div>
                         <p><font color="white" size="+2">答题系统</font></p>
                         <div>
-                            <label></label>
+                            <label><font color="white">用户名</font></label>
                             <input type="text" class="span12" required="" id="username">
                             <label><font color="white">密码</font></label>
                             <input type="password" class="span12" required="" id="password">
