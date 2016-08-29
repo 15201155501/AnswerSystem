@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" />
     </list>
     <ignored path="AnswerSystem.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,41 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="sign-in.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/home/sign-in.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="checkstu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/checkstu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="352">
+              <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -94,8 +63,8 @@
         <option value="$PROJECT_DIR$/app/Models/ExamModel.php" />
         <option value="$PROJECT_DIR$/public/test/test.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/ExamController.php" />
-        <option value="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" />
       </list>
     </option>
   </component>
@@ -151,7 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -234,60 +203,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AnswerSystem" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -306,13 +221,13 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,7 +292,8 @@
       <workItem from="1472026633644" duration="1202000" />
       <workItem from="1472037823791" duration="636000" />
       <workItem from="1472088823167" duration="7412000" />
-      <workItem from="1472176872935" duration="5008000" />
+      <workItem from="1472176872935" duration="5641000" />
+      <workItem from="1472438158822" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="修改历史列表文件">
       <created>1471503431684</created>
@@ -477,11 +393,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472191557575</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="修改细节">
+      <created>1472192070324</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1472192070324</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57541000" />
+    <option name="totallyTimeSpent" value="58833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -541,7 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2596">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -563,7 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2596">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,15 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="228" column="40" selection-start-line="228" selection-start-column="40" selection-end-line="228" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,17 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="0" column="1031" selection-start-line="0" selection-start-column="1031" selection-end-line="0" selection-end-column="1031" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/sign-in.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
           <caret line="133" column="11" selection-start-line="133" selection-start-column="11" selection-end-line="133" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,14 +724,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/checkstu.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="516">
+          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -846,10 +743,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="100" column="54" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+        <state relative-caret-position="530">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/checkstu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/sign-in.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
           <folding />
         </state>
       </provider>
