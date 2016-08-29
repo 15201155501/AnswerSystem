@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="">
+    <list default="true" id="77eb9228-8b85-474a-aec2-a3799d468b03" name="默认的" comment="修改登录页">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" afterPath="$PROJECT_DIR$/resources/views/home/sign-in.blade.php" />
     </list>
@@ -29,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/home/sign-in.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
-              <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
+              <caret line="79" column="58" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -293,7 +293,7 @@
       <workItem from="1472037823791" duration="636000" />
       <workItem from="1472088823167" duration="7412000" />
       <workItem from="1472176872935" duration="5641000" />
-      <workItem from="1472438158822" duration="659000" />
+      <workItem from="1472438158822" duration="1034000" />
     </task>
     <task id="LOCAL-00001" summary="修改历史列表文件">
       <created>1471503431684</created>
@@ -400,11 +400,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472192070324</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="修改登录页">
+      <created>1472438934855</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1472438934855</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58833000" />
+    <option name="totallyTimeSpent" value="59208000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -446,7 +453,8 @@
     <MESSAGE value="修改历史列表文件" />
     <MESSAGE value="修改考试细节" />
     <MESSAGE value="修改细节" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改细节" />
+    <MESSAGE value="修改登录页" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改登录页" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -762,7 +770,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/home/sign-in.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
+          <caret line="79" column="58" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
           <folding />
         </state>
       </provider>
